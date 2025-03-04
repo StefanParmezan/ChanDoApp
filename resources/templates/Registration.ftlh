@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/Registration.css">
     <style>
         .message-container {
             margin-bottom: 20px; /* Отступ снизу для сообщений */
@@ -33,28 +33,6 @@
             top: 50%; /* Центрирование по вертикали */
             transform: translateY(170%); /* Центрирование по вертикали */
             cursor: pointer; /* Указатель при наведении на кнопку */
-        }
-        /* Стиль для модального окна */
-        .modal {
-            display: none; /* Скрыто по умолчанию */
-            position: fixed; /* Фиксированное позиционирование */
-            z-index: 1000; /* На переднем плане */
-            left: 0;
-            top: 0;
-            width: 100%; /* Полная ширина */
-            height: 100%; /* Полная высота */
-            overflow: auto; /* Прокрутка при необходимости */
-            background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
-        }
-        .modal-content {
-            background-color: #ffffff; /* Фон модального окна */
-            margin: 15% auto; /* Центрирование */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Ширина модального окна */
-            max-width: 400px; /* Максимальная ширина */
-            text-align: center; /* Центрирование текста */
-            border-radius: 10px; /* Закругленные углы */
         }
         .modal-content img {
             width: 150px; /* Ширина изображения галочки */
@@ -141,11 +119,11 @@
         <input type="text" name="email" placeholder="Ваш email" value="${email!''}" required/>
         <input type="number" name="date" placeholder="Возраст (0-100)" min="0" max="100" value="${date!''}" required/>
         <div class="password-container">
-            <input type="password" id="password" name="password" placeholder="Пароль (A-Z), 8 символов, (!-*)" required/>
+            <input type="password" id="password" name="password" placeholder="Пароль (A-Z), 8 символов, (!-*)" maxlength="30" required/>
             <img src="./imgs/eye-icon.gif" class="toggle-password" onclick="togglePasswordVisibility('password')" style="width: 33px; height: 19px;" alt="eye icon"/>
         </div>
         <div class="password-container">
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" required/>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" maxlength="30" required/>
         </div>
 
         <button type="submit">Создать аккаунт</button>
