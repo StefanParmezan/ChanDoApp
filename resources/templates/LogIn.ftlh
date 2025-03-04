@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход</title>
-    <link rel="stylesheet" href="./css/style.css"> <!-- Используйте тот же файл стилей -->
+    <link rel="stylesheet" href="./css/Registration.css"> <!-- Используйте тот же файл стилей -->
     <style>
         .error-message {
             color: red; /* Красный цвет для сообщения об ошибке */
@@ -32,6 +32,11 @@
         <button type="submit">Войти</button>
         <#if RequestParameters.error??>
             <div class="error-message">Неверный логин или пароль.</div>
+        </#if>
+        <#if RequestParameters.expired??>
+            <div class="alert alert-warning">
+                Ваша сессия истекла. Пожалуйста, войдите снова.
+            </div>
         </#if>
     </form>
 

@@ -8,6 +8,25 @@
     text-decoration: none;
     list-style-type: none;
 }
+input {
+    background-color: #000000 !important; /* Черный фон */
+    color: white !important; /* Белый текст */
+    border: 2.5px solid #c4b9b9 !important; /* Граница */
+    border-radius: 25px !important; /* Закругленные углы */
+    font-size: 17px !important; /* Размер шрифта */
+    padding: 15px !important; /* Отступы */
+    width: 100% !important; /* Ширина */
+    box-sizing: border-box !important; /* Учитывать padding в ширине */
+}
+
+/* Стили для автозаполнения */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #000000 inset !important; /* Черный фон */
+    -webkit-text-fill-color: white !important; /* Белый текст */
+}
 /* Стиль для модального окна */
 .modal {
     display: none; /* Скрыто по умолчанию */
