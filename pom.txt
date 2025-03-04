@@ -23,9 +23,15 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version> <!-- Укажите версию явно -->
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-core</artifactId>
-            <version>3.2.0</version> <!-- Убедись, что версия совместима с твоим Spring Boot -->
+            <version>3.4.0</version> <!-- Убедись, что версия совместима с твоим Spring Boot -->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
