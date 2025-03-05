@@ -11,6 +11,7 @@
           rel="stylesheet"
   />
   <link rel="stylesheet" href="./css/HabitList.css" />
+
 </head>
 <body>
 <div class="container">
@@ -55,5 +56,6 @@
     <i class="fas fa-plus"></i>
   </div>
 </a>
+<script src="./js/HabitList.js"></script>
 </body>
 </html>
