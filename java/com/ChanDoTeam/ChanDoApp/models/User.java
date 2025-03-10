@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -20,6 +22,10 @@ public class User {
     private String habit; // Привычка
     private String habit_time;
     private String habit_type;
+
+    // Связь с привычками (OneToMany)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Habit> habits;
 
     // Конструктор по умолчанию
     public User() {}
