@@ -1,76 +1,38 @@
 package com.ChanDoTeam.ChanDoApp.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
+@Getter
+@Setter
 @Entity
 public class Habit {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title; // Название привычки (из поля "Что вы хотите исключить")
-    private LocalDate startDate; // Дата начала (из полей ДД, ММ, ГГГГ)
-    private String color; // Цвет (выбранный пользователем)
-    private String category; // Категория (Вредная/Полезная)
-    private boolean completed; // Статус выполнения (по умолчанию false)
-    private Long userId; // ID пользователя, который добавил привычку
+    private String title;
+    private String category;
+    private LocalDate startDate;
+    private String color;
 
-    // Геттеры и сеттеры
-    public Long getId() {
-        return id;
-    }
+    // Связь с пользователем (ManyToOne)
+    @ManyToOne(cascade = CascadeType.ALL) // Или CascadeType.REMOVE
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    // Конструктор по умолчанию
+    public Habit() {}
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
+    // Конструктор с параметрами
+    public Habit(String title, String category, LocalDate startDate, String color, User user) {
         this.title = title;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
         this.category = category;
-    }
-
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
+        this.startDate = startDate;
+        this.color = color;
+        this.user = user;
     }
 }
