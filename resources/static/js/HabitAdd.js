@@ -69,3 +69,59 @@ function isValidDate(day, month, year) {
         date.getMonth() + 1 == month &&
         date.getFullYear() == year;
 }
+function validateAndSubmit() {
+    const day = document.getElementById('day-input').value.padStart(2, '0');
+    const month = document.getElementById('month-input').value.padStart(2, '0');
+    const year = document.getElementById('year-input').value;
+
+    // Установка значения в скрытое поле даты
+    const formattedDate = `${year}-${month}-${day}`;
+    document.getElementById('start-date').value = formattedDate;
+
+    // Валидация даты
+    const date = new Date(formattedDate);
+    if (isNaN(date.getTime())) {
+        alert('Некорректная дата! Проверьте введенные значения');
+        return false;
+    }
+
+    return true;
+}
+
+// Инициализация полей текущей датой
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date();
+    document.getElementById('day-input').value = today.getDate();
+    document.getElementById('month-input').value = today.getMonth() + 1;
+    document.getElementById('year-input').value = today.getFullYear();
+});
+function goBack() {
+    window.location.href = "/habitlist";
+}
+
+function validateAndSubmit() {
+    const day = document.getElementById('day-input').value;
+    const month = document.getElementById('month-input').value;
+    const year = document.getElementById('year-input').value;
+
+    // Проверка корректности даты
+    const date = new Date(`${year}-${month}-${day}`);
+    if (isNaN(date.getTime())) {
+        alert('Некорректная дата! Проверьте введенные значения');
+        return false;
+    }
+
+    // Форматируем дату в YYYY-MM-DD и устанавливаем в скрытое поле
+    const formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+    document.getElementById('start-date').value = formattedDate;
+
+    return true;
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date();
+
+    // Устанавливаем текущую дату
+    document.getElementById('day-input').value = today.getDate().toString().padStart(2, '0');
+    document.getElementById('month-input').value = (today.getMonth() + 1).toString().padStart(2, '0');
+    document.getElementById('year-input').value = today.getFullYear();
+});

@@ -20,7 +20,7 @@
     </div>
 
     <!-- Форма для создания привычки -->
-    <form action="/habitadd" method="post">
+    <form action="/habitadd" method="post" onsubmit="return validateAndSubmit()">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <p class="text-left mb-2 text-sm">Мне нужно исключить из своей жизни</p>
         <div class="input-group mb-4">
@@ -35,12 +35,19 @@
         </select>
 
         <p class="text-left mb-2 text-sm">Я начну с:</p>
+        <!-- Измененные поля ввода даты -->
         <div class="date-group mb-4">
-            <input id="day-input" name="day" placeholder="ДД" type="text" min="1" max="31"/>
-            <input id="month-input" name="month" placeholder="ММ" type="text" min="1" max="12"/>
-            <input id="year-input" name="year" placeholder="ГГГГ" type="text" min="2024"/>
-            <i class="fas fa-calendar-alt text-white ml-2" onclick="openCalendar()"></i>
+            <input id="day-input" name="day" placeholder="ДД" type="number"
+                   min="1" max="31" required class="no-spinner" value="${day}">
+            <input id="month-input" name="month" placeholder="ММ" type="number"
+                   min="1" max="12" required class="no-spinner" value="${month}">
+            <input id="year-input" name="year" placeholder="ГГГГ" type="number"
+                   min="2024" required class="no-spinner" value="${year}">
+            <i class="fas fa-calendar-alt text-white ml-2"></i>
         </div>
+
+        <!-- Скрытое поле для отправки даты -->
+        <input type="date" id="start-date" name="startDate" hidden>
 
         <p class="text-left mb-6 text-sm">Подходящий цвет</p>
         <div class="color-group mb-6">
@@ -63,9 +70,7 @@
 </div>
 
 <script>
-    function goBack() {
-        window.location.href = "/habitlist";
-    }
+
 </script>
 </body>
 </html>
