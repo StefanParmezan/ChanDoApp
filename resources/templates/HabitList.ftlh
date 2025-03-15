@@ -23,17 +23,11 @@
       <i class="fas fa-star"></i>
     </div>
   </div>
-
-  <!-- Логирование: Вывод всех привычек в виде строки -->
-<#list habits as habit>
-    <div class="habit-item">
-      ${habit.title!"N/A"} (${habit.category!"N/A"}, ${habit.startDate!"N/A"}, ${habit.color!"N/A"})
-    </div>
-</#list>
+  
   <#list habits as habit>
     <div class="card" data-start-date="${habit.startDate!'N/A'}" data-last-completed="${habit.lastCompleted!'0'}">
       <div class="progress-circle" style="background-color: ${habit.color!'white'};">
-        <img src="/imgs/${habit.color}.png" alt="Habit Icon">
+        <img class="brain-icon" src="/imgs/${habit.color}.png" alt="Habit Icon">
       </div>
       <div class="details">
         <h3>${habit.title!"N/A"}</h3>
