@@ -1,17 +1,29 @@
 package com.ChanDoTeam.ChanDoApp.models;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "habit")
+=======
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDate;
+
+@Getter
+@Setter
+@Entity
+>>>>>>> b80cf8db0ed71f2ad1f64892d866a61570165012
 public class Habit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
+<<<<<<< HEAD
 
     private String category;
 
@@ -74,4 +86,26 @@ public class Habit {
         this.user = user;
     }
     
+=======
+    private String category;
+    private LocalDate startDate;
+    private String color;
+
+    // Связь с пользователем (ManyToOne)
+    @ManyToOne(cascade = CascadeType.ALL) // Или CascadeType.REMOVE
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    // Конструктор по умолчанию
+    public Habit() {}
+
+    // Конструктор с параметрами
+    public Habit(String title, String category, LocalDate startDate, String color, User user) {
+        this.title = title;
+        this.category = category;
+        this.startDate = startDate;
+        this.color = color;
+        this.user = user;
+    }
+>>>>>>> b80cf8db0ed71f2ad1f64892d866a61570165012
 }

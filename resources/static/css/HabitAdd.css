@@ -3,6 +3,7 @@
 *{
   user-select: none;
 }
+<<<<<<< HEAD
 /* Скрыть стрелочки у полей ввода типа number */
 .no-spinner::-webkit-inner-spin-button,
 .no-spinner::-webkit-outer-spin-button {
@@ -13,6 +14,8 @@
 .no-spinner {
   -moz-appearance: textfield; /* Firefox */
 }
+=======
+>>>>>>> b80cf8db0ed71f2ad1f64892d866a61570165012
 
 body {
   font-family: "Golos Text", serif;

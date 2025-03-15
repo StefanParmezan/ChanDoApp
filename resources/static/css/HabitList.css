@@ -78,6 +78,20 @@ fa-bars-icon{
   height: 18%;
 }
 
+<<<<<<< HEAD
+=======
+.cardd{
+  display: none;
+}
+
+.carddd{
+  display: none;
+}
+
+.cardddd{
+  display: none;
+}
+>>>>>>> b80cf8db0ed71f2ad1f64892d866a61570165012
 
 .progress-circle {
   position: relative;
@@ -196,8 +210,13 @@ fa-bars-icon{
 }
 
 .brain-icon {
+<<<<<<< HEAD
   width: 33%; /* Размер изображения */
   height: 28%; /* Размер изображения */
+=======
+  width: 83%; /* Размер изображения */
+  height: 78%; /* Размер изображения */
+>>>>>>> b80cf8db0ed71f2ad1f64892d866a61570165012
   object-fit: cover; /* Чтобы изображение сохраняло пропорции */
   border-radius: 50%; /* Делаем изображение круглым */
 }

@@ -20,7 +20,11 @@
     </div>
 
     <!-- Форма для создания привычки -->
+<<<<<<< HEAD
     <form action="/habitadd" method="post" onsubmit="return validateAndSubmit()">
+=======
+    <form action="/habitadd" method="post">
+>>>>>>> b80cf8db0ed71f2ad1f64892d866a61570165012
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <p class="text-left mb-2 text-sm">Мне нужно исключить из своей жизни</p>
         <div class="input-group mb-4">
@@ -35,6 +39,7 @@
         </select>
 
         <p class="text-left mb-2 text-sm">Я начну с:</p>
+<<<<<<< HEAD
         <!-- Измененные поля ввода даты -->
         <div class="date-group mb-4">
             <input id="day-input" name="day" placeholder="ДД" type="number"
@@ -49,6 +54,15 @@
         <!-- Скрытое поле для отправки даты -->
         <input type="date" id="start-date" name="startDate" hidden>
 
+=======
+        <div class="date-group mb-4">
+            <input id="day-input" name="day" placeholder="ДД" type="text" min="1" max="31"/>
+            <input id="month-input" name="month" placeholder="ММ" type="text" min="1" max="12"/>
+            <input id="year-input" name="year" placeholder="ГГГГ" type="text" min="2024"/>
+            <i class="fas fa-calendar-alt text-white ml-2" onclick="openCalendar()"></i>
+        </div>
+
+>>>>>>> b80cf8db0ed71f2ad1f64892d866a61570165012
         <p class="text-left mb-6 text-sm">Подходящий цвет</p>
         <div class="color-group mb-6">
             <div class="color-option" style="background-color: #f87171;" onclick="changeTextColor('#f87171', this, '/imgs/RedBrain.png', 'RedBrain')"></div>
@@ -70,7 +84,13 @@
 </div>
 
 <script>
+<<<<<<< HEAD
 
+=======
+    function goBack() {
+        window.location.href = "/habitlist";
+    }
+>>>>>>> b80cf8db0ed71f2ad1f64892d866a61570165012
 </script>
 </body>
 </html>

@@ -68,6 +68,7 @@ function isValidDate(day, month, year) {
         date.getDate() == day &&
         date.getMonth() + 1 == month &&
         date.getFullYear() == year;
+<<<<<<< HEAD
 }
 function validateAndSubmit() {
     const day = document.getElementById('day-input').value.padStart(2, '0');
@@ -125,3 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('month-input').value = (today.getMonth() + 1).toString().padStart(2, '0');
     document.getElementById('year-input').value = today.getFullYear();
 });
+=======
+}
+>>>>>>> b80cf8db0ed71f2ad1f64892d866a61570165012
