@@ -10,8 +10,9 @@ body {
   margin: 0 auto;
 }
 
-.ppoo{
-  margin-left: -240px;
+
+element{
+  background-color: #444;
 }
 
 .header {

@@ -36,7 +36,7 @@
           <div class="stats">
             <div>
               <span class="ppoo">Старт</span>
-              <span style="color: #00aaff">${habit.startDate!"N/A"}</span>
+              <span style="color: #00aaff">${habit.startDate?string["dd-MM-yyyy"]!"N/A"}</span>
             </div>
             <div>
               <span class="pop">Стрик</span>

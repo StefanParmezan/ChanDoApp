@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/HabitList.css"> <!-- Подключение вашего CSS -->
+    <script src="/js/HabitList.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="container">
@@ -15,7 +16,7 @@
     <div class="search-bar">
       <i class="fas fa-search"></i>
       <label>
-        <input type="text" placeholder="ПОИСК">
+        <input id="search-input" type="text" placeholder="ПОИСК">
       </label>
     </div>
     <div class="points">
@@ -35,7 +36,7 @@
           <div class="stats">
             <div>
               <span class="ppoo">Старт</span>
-              <span style="color: #00aaff">${habit.startDate!"N/A"}</span>
+              <span style="color: #00aaff">${habit.startDate?string["dd-MM-yyyy"]!"N/A"}</span>
             </div>
             <div>
               <span class="pop">Стрик</span>
@@ -58,4 +59,5 @@
 </div>
 
 </body>
+
 </html>

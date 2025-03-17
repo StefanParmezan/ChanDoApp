@@ -128,3 +128,5 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('month-input').value = (today.getMonth() + 1).toString().padStart(2, '0');
     document.getElementById('year-input').value = today.getFullYear();
 });
+
+
