@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #181616;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+.logo img {
+    width: 100%;
+    height: 30%;
+    margin-bottom: 0px;
+}
+.menu {
+    margin-top: 20px;
+}
+
+.menu-item {
+    background-color: #333;
+    border-radius: 25px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+.menu-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.menu-item i {
+    margin-right: 10px;
+    margin-left: 7.5px;
+}
+.menu-item span {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 8px;
+    font-size: 20px;
+}
+.menu-item.profile {
+    background-color: #ffffff;
+    color: #000000;
+    height: 60px;
+}
+.menu-item.premium {
+    background: linear-gradient(92.85deg, #2D81E0 -1.58%, #C053FF 102.36%);
+    color: white;
+}
+
+.menu-item.premium:hover {
+    background: linear-gradient(92.85deg, #477dbb -1.58%, #651195 102.36%);
+    animation: premiumAnimation 2s ease forwards;
+}
+
+.menu-item:hover {
+    background-color: #555;
+}
+.menu-item.profile:hover {
+    background-color: #fff8f8;
+}
+.menu-item.premium:active {
+    background: linear-gradient(90deg, #3a5ca7, #071838);
+    transition: transform 0.3s ease;
+}
+.menu-item a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+@keyframes premiumAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+@media (max-width: 600px) {
+    .menu-item {
+        font-size: 17px;
+        padding: 16px;
+    }
+    .menu-item img {
+        width: 30px;
+        height: 30px;
+    }
+    .logo img {
+        width: 75%;
+        height: 26%;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+}
+
+.profille {
+    margin-left: 7px;
+}
+
+@media (max-width: 375px) {
+    .menu-item {
+        font-size: 18px;
+        padding: 17px;
+    }
+    .menu-item img {
+        width: 30px;
+        height: 30px;
+    }
+    .logo img {
+        width: 80%;
+        height: 25%;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .menu-item {
+        font-size: 18px;
+        padding: 17px;
+    }
+    .menu-item img {
+        width: 30px;
+        height: 30px;
+    }
+    .logo img {
+        width: 75%;
+        height: 20%;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 300px) {
+    .menu-item {
+        font-size: 18px;
+        padding: 17px;
+    }
+    .menu-item img {
+        width: 30px;
+        height: 30px;
+    }
+    .logo img {
+        width: 90%;
+        height: 20%;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+}

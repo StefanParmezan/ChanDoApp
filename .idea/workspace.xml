@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cef902a5-20b5-4c20-8cae-036c4e35b75f" name="Changes" comment="Закончена регистрация и логина, скоро будет добавлена логика добавления привычек">
+      <change afterPath="$PROJECT_DIR$/.gitignore.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ChanDoApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpClient.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_01_2025_17_09_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_01_2025_17_09_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_01_2025_17_09__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ren" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ChanDoApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ChanDoApp-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/chanDoAppApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/config/SecurityConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitAddController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitListController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/LogInController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/MainPageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/listeners/CustomHttpSessionListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/models/Habit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/models/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/repositories/HabitRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/repositories/UserRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/CustomUserDetailsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/HabitAddService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/HabitListService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/LoginResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/RegistrationResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/RegistrationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/chanDoAppApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/config/SecurityConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/HabitAddController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/HabitListController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/LogInController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/MainPageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/listeners/CustomHttpSessionListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/models/Habit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/models/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/repositories/HabitRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/repositories/UserRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/CustomUserDetailsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/HabitAddService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/HabitListService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/LoginResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/RegistrationResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/RegistrationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/StreakService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/HabitAdd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/HabitList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/LogIn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/MainPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/Registration.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/BlueBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/Brain-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/ChanDo_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/GreenBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/LightBlue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/OrangeBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/PinkBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/ProfileSt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/PurpleBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/RedBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/WhiteBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/YellowBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/eye-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/HabitAdd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/HabitList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/Registration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/HabitAdd.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/HabitList.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/LogIn.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/MainPage.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/Registration.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/HabitAdd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/HabitList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/LogIn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/MainPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/Registration.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/BlueBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/Brain-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/ChanDo_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/GreenBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/LightBlue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/OrangeBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/PinkBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/ProfileSt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/PurpleBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/RedBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/WhiteBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/YellowBrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/imgs/eye-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/HabitAdd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/Registration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/HabitAdd.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/HabitList.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/LogIn.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/MainPage.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/Registration.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/project-local-repo/com.ChanDoTeam/ChanDoApp/0.0.1-SNAPSHOT/ChanDoApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/project-local-repo/com.ChanDoTeam/ChanDoApp/0.0.1-SNAPSHOT/ChanDoApp-0.0.1-SNAPSHOT.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoAppApplicationTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoAppApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/ChanDoTeam/ChanDoApp/ChanDoAppApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/ChanDoTeam/ChanDoAppApplicationTests.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="JavaScript File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/src" value="frontend" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;StefanParmezan&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/StefanParmezan/ChanDoApp&quot;,
+    &quot;accountId&quot;: &quot;dd76d108-9948-4a68-986d-6aae84da9376&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2rwTFjndyoh0AjUrrBn15RFoMRV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.ChanDoAppApplicationTests.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ChanDoAppApplication.executor": "Run",
+    "Spring Boot.chanDoAppApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/StefanParmezan/Desktop/Home/MyFiles/Programming/ChanDoApplication",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main" />
+      <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\time" />
+      <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\static\imgs" />
+      <recent name="C:\Users\dell\Desktop\ChanDoApp\src\main\resources\static\imgs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\templates" />
+      <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\static\js" />
+      <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\static\css" />
+      <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\static\imgs" />
+      <recent name="C:\Users\dell\Desktop\ChanDoApp\src\main\resources\static\imgs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.chanDoAppApplication">
+    <configuration name="ChanDoAppApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChanDoApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ChanDoTeam.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ChanDoTeam" />
+      <option name="MAIN_CLASS_NAME" value="com.ChanDoTeam.ChanDoAppApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="chanDoAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ChanDoApp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ChanDoTeam.ChanDoApp.chanDoAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ChanDoAppApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cef902a5-20b5-4c20-8cae-036c4e35b75f" name="Changes" comment="" />
+      <created>1737469035899</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737469035899</updated>
+      <workItem from="1737469037005" duration="519000" />
+      <workItem from="1737822407835" duration="6934000" />
+      <workItem from="1737889759789" duration="3488000" />
+      <workItem from="1737893442222" duration="189000" />
+      <workItem from="1737893802944" duration="974000" />
+      <workItem from="1737894791465" duration="109000" />
+      <workItem from="1737895196143" duration="701000" />
+      <workItem from="1737895912895" duration="889000" />
+      <workItem from="1737896822064" duration="84000" />
+      <workItem from="1737896917705" duration="394000" />
+      <workItem from="1737897401245" duration="95000" />
+      <workItem from="1737897505949" duration="214000" />
+      <workItem from="1737897739249" duration="882000" />
+      <workItem from="1737972163248" duration="12464000" />
+      <workItem from="1738068326358" duration="3774000" />
+      <workItem from="1738072494518" duration="1683000" />
+      <workItem from="1738153371117" duration="5421000" />
+      <workItem from="1738159355796" duration="3163000" />
+      <workItem from="1738320715223" duration="7974000" />
+      <workItem from="1738413045355" duration="8047000" />
+      <workItem from="1738428080459" duration="747000" />
+      <workItem from="1738493861414" duration="6828000" />
+      <workItem from="1738505219738" duration="47000" />
+      <workItem from="1738577766365" duration="6880000" />
+      <workItem from="1738584692268" duration="4638000" />
+      <workItem from="1738592732941" duration="1468000" />
+      <workItem from="1738598083248" duration="1039000" />
+      <workItem from="1738599153744" duration="7144000" />
+      <workItem from="1738661492714" duration="5826000" />
+      <workItem from="1738677427773" duration="1557000" />
+      <workItem from="1738679018763" duration="27000" />
+      <workItem from="1738683679956" duration="578000" />
+      <workItem from="1738684292636" duration="3024000" />
+      <workItem from="1738728043710" duration="2687000" />
+      <workItem from="1738748901634" duration="9262000" />
+      <workItem from="1738760736622" duration="1473000" />
+      <workItem from="1738766595337" duration="6238000" />
+      <workItem from="1738848388194" duration="411000" />
+      <workItem from="1738927119582" duration="1663000" />
+      <workItem from="1738987483228" duration="448000" />
+      <workItem from="1738988157157" duration="44000" />
+      <workItem from="1738993205719" duration="2960000" />
+      <workItem from="1739012331090" duration="2000" />
+      <workItem from="1739013644659" duration="878000" />
+      <workItem from="1739018337985" duration="1474000" />
+      <workItem from="1739019936613" duration="2092000" />
+      <workItem from="1739036088260" duration="1499000" />
+      <workItem from="1739037722022" duration="3669000" />
+      <workItem from="1739045228551" duration="955000" />
+      <workItem from="1739046771176" duration="13000" />
+      <workItem from="1739047211759" duration="922000" />
+      <workItem from="1739072874057" duration="53000" />
+      <workItem from="1739073007509" duration="28000" />
+      <workItem from="1739073917277" duration="95000" />
+      <workItem from="1739077600244" duration="3439000" />
+      <workItem from="1739100140780" duration="1826000" />
+      <workItem from="1739105435272" duration="4423000" />
+      <workItem from="1739117751592" duration="2012000" />
+      <workItem from="1739450143306" duration="2292000" />
+      <workItem from="1739452797856" duration="2244000" />
+      <workItem from="1739456005090" duration="1920000" />
+      <workItem from="1739459167793" duration="4000" />
+      <workItem from="1739459854245" duration="2000" />
+      <workItem from="1739464784125" duration="2033000" />
+      <workItem from="1739470930661" duration="60000" />
+      <workItem from="1739475256341" duration="692000" />
+      <workItem from="1739513134031" duration="112000" />
+      <workItem from="1739632799176" duration="2167000" />
+      <workItem from="1739637996906" duration="5809000" />
+      <workItem from="1739687370787" duration="6248000" />
+      <workItem from="1739729508050" duration="3000" />
+      <workItem from="1739784568217" duration="605000" />
+      <workItem from="1739789083952" duration="338000" />
+      <workItem from="1739789456686" duration="1309000" />
+      <workItem from="1739793342099" duration="310000" />
+      <workItem from="1739793664096" duration="1318000" />
+      <workItem from="1739972362070" duration="23000" />
+      <workItem from="1740055222513" duration="2858000" />
+      <workItem from="1740058124019" duration="64000" />
+      <workItem from="1740058198221" duration="1325000" />
+      <workItem from="1740059821655" duration="8000" />
+      <workItem from="1740060493666" duration="1658000" />
+      <workItem from="1740142233746" duration="20000" />
+      <workItem from="1740205888802" duration="1599000" />
+      <workItem from="1740207509452" duration="11000" />
+      <workItem from="1740208700578" duration="671000" />
+      <workItem from="1740305568064" duration="1322000" />
+      <workItem from="1740648531064" duration="33000" />
+      <workItem from="1740747561891" duration="124000" />
+      <workItem from="1740748053459" duration="14000" />
+      <workItem from="1741008057586" duration="17373000" />
+      <workItem from="1741026985494" duration="1675000" />
+      <workItem from="1741028718079" duration="410000" />
+      <workItem from="1741029151291" duration="3045000" />
+      <workItem from="1741060096726" duration="9408000" />
+      <workItem from="1741094100268" duration="10428000" />
+      <workItem from="1741106298809" duration="470000" />
+      <workItem from="1741107284583" duration="2049000" />
+      <workItem from="1741151993424" duration="1009000" />
+      <workItem from="1741178456914" duration="8863000" />
+      <workItem from="1741193519125" duration="7669000" />
+      <workItem from="1741203149032" duration="552000" />
+      <workItem from="1741240902099" duration="2482000" />
+      <workItem from="1741243540250" duration="27273000" />
+      <workItem from="1741282664592" duration="6790000" />
+      <workItem from="1741328503121" duration="5291000" />
+      <workItem from="1741357641844" duration="189000" />
+      <workItem from="1741370980865" duration="2003000" />
+      <workItem from="1741509944123" duration="1863000" />
+      <workItem from="1741590261871" duration="780000" />
+      <workItem from="1741601116580" duration="1246000" />
+      <workItem from="1741602456267" duration="7609000" />
+      <workItem from="1741709334535" duration="3789000" />
+      <workItem from="1741772951526" duration="7673000" />
+      <workItem from="1741918216055" duration="2433000" />
+      <workItem from="1741920754813" duration="32090000" />
+      <workItem from="1742017117779" duration="4869000" />
+      <workItem from="1742023662402" duration="2555000" />
+      <workItem from="1742034303789" duration="9000" />
+      <workItem from="1742037197116" duration="1195000" />
+      <workItem from="1742056819547" duration="453000" />
+      <workItem from="1742057628173" duration="2473000" />
+      <workItem from="1742102233315" duration="702000" />
+      <workItem from="1742110183088" duration="2492000" />
+      <workItem from="1742120403590" duration="1570000" />
+      <workItem from="1742125811872" duration="2824000" />
+      <workItem from="1742139122849" duration="3276000" />
+      <workItem from="1742142796359" duration="149000" />
+      <workItem from="1742146379887" duration="1899000" />
+      <workItem from="1742150376798" duration="5135000" />
+      <workItem from="1742187550642" duration="7154000" />
+      <workItem from="1742197153920" duration="1081000" />
+      <workItem from="1742209090199" duration="6255000" />
+      <workItem from="1742223664809" duration="1227000" />
+      <workItem from="1742231770243" duration="970000" />
+    </task>
+    <task id="LOCAL-00001" summary="Практически закончена логика регистрации пользователей">
+      <option name="closed" value="true" />
+      <created>1737893541354</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737893541355</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Закончена логика регистрации и начата работа над добавлением базы данных в проект">
+      <option name="closed" value="true" />
+      <created>1738072539668</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738072539668</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Закончена логика регистрации и начата работа над добавлением базы данных в проект">
+      <option name="closed" value="true" />
+      <created>1738848434061</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738848434061</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Закончена регистрация и логина, скоро будет добавлена логика добавления привычек">
+      <option name="closed" value="true" />
+      <created>1739789518012</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739789518012</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Закончена регистрация и логина, скоро будет добавлена логика добавления привычек">
+      <option name="closed" value="true" />
+      <created>1739789553321</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739789553321</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Практически закончена логика регистрации пользователей" />
+    <MESSAGE value="Закончена логика регистрации и начата работа над добавлением базы данных в проект" />
+    <MESSAGE value="Закончена регистрация и логина, скоро будет добавлена логика добавления привычек" />
+    <option name="LAST_COMMIT_MESSAGE" value="Закончена регистрация и логина, скоро будет добавлена логика добавления привычек" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

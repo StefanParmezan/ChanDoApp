@@ -1,0 +1,379 @@
+Index: src/main/java/com/ChanDoTeam/ChanDoApp/services/RegistrationServices.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ChanDoTeam.ChanDoApp.services;\r\n\r\npublic class RegistrationServices {\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/ChanDoTeam/ChanDoApp/services/RegistrationServices.java b/src/main/java/com/ChanDoTeam/ChanDoApp/services/RegistrationServices.java
+--- a/src/main/java/com/ChanDoTeam/ChanDoApp/services/RegistrationServices.java	(revision ef7d6a64b147a91e6354c2ee8bd87613bf7b378b)
++++ b/src/main/java/com/ChanDoTeam/ChanDoApp/services/RegistrationServices.java	(date 1737892603120)
+@@ -1,4 +1,63 @@
+ package com.ChanDoTeam.ChanDoApp.services;
+ 
++import com.ChanDoTeam.ChanDoApp.models.User;
++import org.slf4j.Logger;
++import org.slf4j.LoggerFactory;
++import org.springframework.stereotype.Service;
++
++import java.util.ArrayList;
++import java.util.List;
++
++@Service
+ public class RegistrationServices {
+-}
++    private List<User> userData = new ArrayList<>();
++    private long ID;
++    private static final Logger logger = LoggerFactory.getLogger(RegistrationServices.class);
++
++    // Конструктор для инициализации с тестовыми данными
++    /*public RegistrationServices() {
++        userData.add(new User(1L, "TestUser ", "password123", (byte) 12));
++    }*/
++
++    // Метод для регистрации нового пользователя
++    public String registerUser (String username, String password, String confirmPassword, byte date) {
++        // Проверка на существование пользователя с таким именем
++        for (User  user : userData) {
++            if (user.getUsername().equals(username)) {
++                return "Пользователь с таким именем уже существует";
++            }
++        }
++
++        // Проверка на допустимый возраст
++        if (date < 0 || date > 100) {
++            return "Возраст должен быть от 0 до 100!";
++        }
++
++        // Проверка на совпадение паролей
++        if (!password.equals(confirmPassword)) {
++            return "Пароли не совпадают!";
++        }
++
++        // Проверка длины пароля
++        if (password.length() < 8) {
++            return "Пароль должен содержать не менее 8 символов!";
++        }
++
++        // Создание нового пользователя и добавление в список
++        User newUser  = new User(++ID, username, password, date);
++        userData.add(newUser );
++
++        // Вывод списка всех пользователей в консоль
++        logger.info("Список пользователей после регистрации:");
++        for (User  user : userData) {
++            logger.info("Пользователь: {} - Возраст: {}", user.getUsername(), user.getDate());
++        }
++
++        return "Пользователь успешно зарегистрирован!";
++    }
++
++    // Метод для получения списка всех пользователей (для отладки)
++    public List<User> getAllUsers() {
++        return userData;
++    }
++}
+\ No newline at end of file
+Index: src/main/resources/templates/Registration.ftlh
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Привычки</title>\r\n    <link rel=\"stylesheet\" href=\"/css/style.css\">\r\n</head>\r\n<body>\r\n<div class=\"container\">\r\n    <img src=\"./imgs/9bff3679050fffd2bb4e6733245df69f.png\" alt=\"Brain icon\"/>\r\n    <div class=\"divider\"></div>\r\n    <h1>Регистрация</h1>\r\n    <form action=\"/register\" method=\"post\">\r\n        <input type=\"text\" name=\"username\" placeholder=\"Имя\" required/>\r\n        <input type=\"text\" name=\"birthdate\" placeholder=\"Дата рождения\" required/>\r\n        <input type=\"email\" name=\"email\" placeholder=\"Email\" required/>\r\n        <input type=\"password\" name=\"password\" placeholder=\"Пароль\" required/>\r\n        <input type=\"password\" name=\"confirmPassword\" placeholder=\"Повторите пароль\" required/>\r\n        <button type=\"submit\">Создать аккаунт</button>\r\n    </form>\r\n    <div th:if=\"${message}\" th:text=\"${message}\"></div>\r\n</div>\r\n</body>\r\n</html>
+===================================================================
+diff --git a/src/main/resources/templates/Registration.ftlh b/src/main/resources/templates/Registration.ftlh
+--- a/src/main/resources/templates/Registration.ftlh	(revision ef7d6a64b147a91e6354c2ee8bd87613bf7b378b)
++++ b/src/main/resources/templates/Registration.ftlh	(date 1737893191469)
+@@ -3,23 +3,24 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Привычки</title>
+-    <link rel="stylesheet" href="/css/style.css">
++    <title>Регистрация</title>
++    <link rel="stylesheet" href="./css/style.css">
+ </head>
+ <body>
+ <div class="container">
+     <img src="./imgs/9bff3679050fffd2bb4e6733245df69f.png" alt="Brain icon"/>
+     <div class="divider"></div>
+     <h1>Регистрация</h1>
+-    <form action="/register" method="post">
++    <form action="/registration" method="post"> <!-- Исправлено на правильный маршрут -->
+         <input type="text" name="username" placeholder="Имя" required/>
+-        <input type="text" name="birthdate" placeholder="Дата рождения" required/>
+-        <input type="email" name="email" placeholder="Email" required/>
++        <input type="number" name="date" placeholder="Возраст (0-100)" min="0" max="100" required/>
+         <input type="password" name="password" placeholder="Пароль" required/>
+         <input type="password" name="confirmPassword" placeholder="Повторите пароль" required/>
+         <button type="submit">Создать аккаунт</button>
+     </form>
+-    <div th:if="${message}" th:text="${message}"></div>
++    <#if message??>
++        <div>${message}</div> <!-- Отображение сообщения об ошибке или успехе -->
++    </#if>
+ </div>
+ </body>
+-</html>
+\ No newline at end of file
++</html>
+Index: src/main/java/com/ChanDoTeam/ChanDoApp/models/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ChanDoTeam.ChanDoApp.models;\r\nimport jakarta.persistence.Entity;\r\nimport jakarta.persistence.GeneratedValue;\r\nimport jakarta.persistence.GenerationType;\r\nimport jakarta.persistence.Id;\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\n@Entity\r\n@Data\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\npublic class User {\r\n    private String username, email, password, checkpassword, date;\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/ChanDoTeam/ChanDoApp/models/User.java b/src/main/java/com/ChanDoTeam/ChanDoApp/models/User.java
+--- a/src/main/java/com/ChanDoTeam/ChanDoApp/models/User.java	(revision ef7d6a64b147a91e6354c2ee8bd87613bf7b378b)
++++ b/src/main/java/com/ChanDoTeam/ChanDoApp/models/User.java	(date 1737890251078)
+@@ -1,17 +1,13 @@
+ package com.ChanDoTeam.ChanDoApp.models;
+-import jakarta.persistence.Entity;
+-import jakarta.persistence.GeneratedValue;
+-import jakarta.persistence.GenerationType;
+-import jakarta.persistence.Id;
++
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+-import lombok.NoArgsConstructor;
+ 
+-@Entity
+ @Data
+ @AllArgsConstructor
+-@NoArgsConstructor
+ public class User {
+-    private String username, email, password, checkpassword, date;
+-
+-}
++    private long id; // ID пользователя
++    private String username;
++    private String password;
++    private byte date; // Дата рождения
++}
+\ No newline at end of file
+Index: src/main/java/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ChanDoTeam.ChanDoApp.controllers;\r\n\r\npublic class RegistrationController {\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.java b/src/main/java/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.java
+--- a/src/main/java/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.java	(revision ef7d6a64b147a91e6354c2ee8bd87613bf7b378b)
++++ b/src/main/java/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.java	(date 1737892381369)
+@@ -1,4 +1,54 @@
+ package com.ChanDoTeam.ChanDoApp.controllers;
+ 
++import com.ChanDoTeam.ChanDoApp.services.RegistrationServices;
++import org.slf4j.Logger;
++import org.slf4j.LoggerFactory;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++
++@Controller
+ public class RegistrationController {
+-}
++
++    private static final Logger logger = LoggerFactory.getLogger(RegistrationController.class);
++
++    @Autowired
++    private RegistrationServices registrationServices;
++
++    // Метод для отображения страницы регистрации
++    @GetMapping("/registration")
++    public String showRegistrationForm(Model model) {
++        model.addAttribute("users", registrationServices.getAllUsers()); // Добавляем список пользователей в модель
++        return "Registration"; // Возвращает шаблон Registration.html
++    }
++
++    // Метод для обработки регистрации
++    @PostMapping("/registration")
++    public String registerUser (
++            @RequestParam("username") String username,
++            @RequestParam("date") byte date,
++            @RequestParam("password") String password,
++            @RequestParam("confirmPassword") String confirmPassword,
++            Model model) {
++
++        // Вызов метода регистрации
++        String result = registrationServices.registerUser (username, password, confirmPassword, date);
++
++        // Добавление сообщения в модель для отображения на странице
++        model.addAttribute("message", result);
++        model.addAttribute("users", registrationServices.getAllUsers()); // Добавляем список пользователей в модель
++
++        // Логирование успешной регистрации
++        if (result.equals("Пользователь успешно зарегистрирован!")) {
++            logger.info("Пользователь {} успешно зарегистрирован с возрастом: {}", username, date);
++        } else {
++            logger.warn("Ошибка регистрации для пользователя {}: {}", username, result);
++        }
++
++        // Возврат к странице регистрации
++        return "Registration"; // Убедитесь, что файл Registration.html существует в src/main/resources/templates
++    }
++}
+\ No newline at end of file
+Index: src/main/java/com/ChanDoTeam/ChanDoApp/controllers/GeneralPageController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ChanDoTeam.ChanDoApp.controllers;\r\n\r\nimport com.ChanDoTeam.ChanDoApp.services.HabitServices;\r\nimport lombok.RequiredArgsConstructor;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\n\r\n@Controller\r\n@RequiredArgsConstructor\r\npublic class GeneralPageController {\r\n    private final HabitServices habitService;\r\n\r\n    @GetMapping(\"/\")\r\n    public String GeneralPage(Model model){\r\n        model.addAttribute(\"Habits\",habitService.list());\r\n        habitService.list().forEach(habit -> {\r\n            System.out.println(\"Habit: \" + habit.getHabitName() + \", Date: \" + habit.getHabitDay() + \"/\" + habit.getHabitMonth() + \"/\" + habit.getHabitYear());\r\n        });\r\n        return \"GeneralPage\";\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/ChanDoTeam/ChanDoApp/controllers/GeneralPageController.java b/src/main/java/com/ChanDoTeam/ChanDoApp/controllers/GeneralPageController.java
+--- a/src/main/java/com/ChanDoTeam/ChanDoApp/controllers/GeneralPageController.java	(revision ef7d6a64b147a91e6354c2ee8bd87613bf7b378b)
++++ b/src/main/java/com/ChanDoTeam/ChanDoApp/controllers/GeneralPageController.java	(date 1737825386863)
+@@ -1,4 +1,4 @@
+-package com.ChanDoTeam.ChanDoApp.controllers;
++/*package com.ChanDoTeam.ChanDoApp.controllers;
+ 
+ import com.ChanDoTeam.ChanDoApp.services.HabitServices;
+ import lombok.RequiredArgsConstructor;
+@@ -17,7 +17,7 @@
+         habitService.list().forEach(habit -> {
+             System.out.println("Habit: " + habit.getHabitName() + ", Date: " + habit.getHabitDay() + "/" + habit.getHabitMonth() + "/" + habit.getHabitYear());
+         });
+-        return "GeneralPage";
++        return "Registration";
+ 
+     }
+-}
++}*/
+Index: src/main/resources/static/css/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');\r\n\r\n* {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    font-family: 'Poppins', sans-serif;\r\n    text-decoration: none;\r\n    list-style-type: none;\r\n}\r\n\r\nbody {\r\n    margin: 0;\r\n    padding: 0;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #272525;\r\n}\r\n\r\n.container {\r\n    text-align: center;\r\n    color: white;\r\n    width: 90%;\r\n    max-width: 400px;\r\n}\r\n\r\n.container img {\r\n    width: 280px;  /* Updated size */\r\n    height: 260px; /* Updated size */\r\n    margin-bottom: 10px; /* Reduced margin */\r\n}\r\n\r\n.container h1 {\r\n    font-size: 24px;\r\n    margin-bottom: 20px;\r\n    font-weight: 700;\r\n}\r\n\r\n.container input {\r\n    width: 100%;\r\n    padding: 15px;\r\n    margin: 10px 0;\r\n    border: 2px solid #555;\r\n    border-radius: 25px;\r\n    background-color: #1c1c1c;\r\n    color: white;\r\n    font-size: 16px;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.container button {\r\n    width: 100%;\r\n    padding: 15px;\r\n    margin-top: 20px;\r\n    border: none;\r\n    border-radius: 25px;\r\n    background-color: white;\r\n    color: black;\r\n    font-size: 16px;\r\n    cursor: pointer;\r\n    font-weight: 700;\r\n}\r\n\r\n.divider {\r\n    width: 50px;\r\n    height: 2px;\r\n    background-color: white;\r\n    margin: 20px auto;\r\n}\r\n\r\n/* Responsive Styles */\r\n@media (max-width: 600px) {\r\n    .container {\r\n        width: 95%;\r\n    }\r\n\r\n    .container h1 {\r\n        font-size: 20px;\r\n    }\r\n\r\n    .container input, .container button {\r\n        font-size: 14px;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/resources/static/css/style.css b/src/main/resources/static/css/style.css
+--- a/src/main/resources/static/css/style.css	(revision ef7d6a64b147a91e6354c2ee8bd87613bf7b378b)
++++ b/src/main/resources/static/css/style.css	(date 1737893020444)
+@@ -16,37 +16,39 @@
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+-    background-color: #272525;
++    background-color: #121111;
+ }
+ 
+ .container {
+     text-align: center;
+     color: white;
+     width: 90%;
+-    max-width: 400px;
++    max-width: 390px;
+ }
+ 
+ .container img {
+-    width: 280px;  /* Updated size */
+-    height: 260px; /* Updated size */
+-    margin-bottom: 10px; /* Reduced margin */
++    width: 30%;  /* Updated size */
++    height: 30%; /* Updated size */
++    z-index: 2;
++    margin-bottom: 0;
+ }
+ 
+ .container h1 {
+     font-size: 24px;
+     margin-bottom: 20px;
+     font-weight: 700;
++    z-index: 100;
+ }
+ 
+ .container input {
+     width: 100%;
+     padding: 15px;
+     margin: 10px 0;
+-    border: 2px solid #555;
++    border: 2.5px solid #c4b9b9;
+     border-radius: 25px;
+-    background-color: #1c1c1c;
++    background-color: #000000;
+     color: white;
+-    font-size: 16px;
++    font-size: 17px;
+     box-sizing: border-box;
+ }
+ 
+@@ -63,11 +65,24 @@
+     font-weight: 700;
+ }
+ 
++.container button:hover{
++    color: rgb(255, 255, 255);
++    background-color:rgb(65, 59, 59);
++    transition: .6s;
++}
++
++.container button:active{
++    color: rgb(0, 0, 0);
++    background-color: rgb(255, 255, 255);
++    transition: .4s;
++}
++
++
+ .divider {
+-    width: 50px;
+-    height: 2px;
+-    background-color: white;
+-    margin: 20px auto;
++    width: 100px;
++    height: 2.5px;
++    background-color: rgb(255, 255, 255);
++    margin: 7% auto;
+ }
+ 
+ /* Responsive Styles */
+Index: src/main/java/com/ChanDoTeam/ChanDoApp/services/HabitServices.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ChanDoTeam.ChanDoApp.services;\r\n\r\nimport com.ChanDoTeam.ChanDoApp.models.Habit;\r\nimport org.springframework.stereotype.Service;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\n@Service\r\npublic class HabitServices {\r\n    private List<Habit> MyHabits = new ArrayList<Habit>();\r\n    private long ID = 0;\r\n\r\n    {\r\n        MyHabits.add(new Habit(++ID, \"GYM\", 30, 9, 2000));\r\n        MyHabits.add(new Habit(++ID, \"No smoke\", 14, 8, 2025));\r\n    }\r\n\r\n    public List<Habit> list() {\r\n        return MyHabits;\r\n    }\r\n\r\n    public void saveHabit(Habit habit) {\r\n        // Удаляем лишние пробелы из названия привычки\r\n        String trimmedName = habit.getHabitName().trim();\r\n        habit.setHabitName(trimmedName); // Обновляем название привычки\r\n        habit.setId(++ID); // Устанавливаем новый ID\r\n        MyHabits.add(habit); // Добавляем привычку в список\r\n    }\r\n\r\n    public void deleteHabit(long id) {\r\n        MyHabits.removeIf(habit -> habit.getId() == id);\r\n    }\r\n}
+===================================================================
+diff --git a/src/main/java/com/ChanDoTeam/ChanDoApp/services/HabitServices.java b/src/main/java/com/ChanDoTeam/ChanDoApp/services/HabitServices.java
+--- a/src/main/java/com/ChanDoTeam/ChanDoApp/services/HabitServices.java	(revision ef7d6a64b147a91e6354c2ee8bd87613bf7b378b)
++++ b/src/main/java/com/ChanDoTeam/ChanDoApp/services/HabitServices.java	(date 1737825386902)
+@@ -1,4 +1,4 @@
+-package com.ChanDoTeam.ChanDoApp.services;
++/*package com.ChanDoTeam.ChanDoApp.services;
+ 
+ import com.ChanDoTeam.ChanDoApp.models.Habit;
+ import org.springframework.stereotype.Service;
+@@ -30,4 +30,4 @@
+     public void deleteHabit(long id) {
+         MyHabits.removeIf(habit -> habit.getId() == id);
+     }
+-}
+\ No newline at end of file
++}*/
+\ No newline at end of file
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=ChanDoApp\r\n
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	(revision ef7d6a64b147a91e6354c2ee8bd87613bf7b378b)
++++ b/src/main/resources/application.properties	(date 1737826716764)
+@@ -1,1 +1,3 @@
+ spring.application.name=ChanDoApp
++spring.freemarker.template-loader-path=classpath:/templates/
++spring.freemarker.suffix=.ftlh
+\ No newline at end of file
+Index: src/main/java/com/ChanDoTeam/ChanDoApp/models/Habit.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ChanDoTeam.ChanDoApp.models;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\n\r\n@Data\r\n@AllArgsConstructor\r\npublic class Habit {\r\n    private long id;\r\n    private String habitName; // Изменено на строчную букву\r\n    private int habitDay;\r\n    private int habitMonth;\r\n    private int habitYear;\r\n}
+===================================================================
+diff --git a/src/main/java/com/ChanDoTeam/ChanDoApp/models/Habit.java b/src/main/java/com/ChanDoTeam/ChanDoApp/models/Habit.java
+--- a/src/main/java/com/ChanDoTeam/ChanDoApp/models/Habit.java	(revision ef7d6a64b147a91e6354c2ee8bd87613bf7b378b)
++++ b/src/main/java/com/ChanDoTeam/ChanDoApp/models/Habit.java	(date 1737825386916)
+@@ -1,4 +1,4 @@
+-package com.ChanDoTeam.ChanDoApp.models;
++/*package com.ChanDoTeam.ChanDoApp.models;
+ 
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+@@ -11,4 +11,4 @@
+     private int habitDay;
+     private int habitMonth;
+     private int habitYear;
+-}
+\ No newline at end of file
++}*/
+\ No newline at end of file
