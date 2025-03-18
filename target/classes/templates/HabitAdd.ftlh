@@ -55,10 +55,10 @@
             <div class="color-option" style="background-color: #fb923c;" onclick="changeTextColor('#fb923c', this, '/imgs/OrangeBrain.png', 'OrangeBrain')"></div>
             <div class="color-option" style="background-color: #facc15;" onclick="changeTextColor('#facc15', this, '/imgs/YellowBrain.png', 'YellowBrain')"></div>
             <div class="color-option" style="background-color: #4ade80;" onclick="changeTextColor('#4ade80', this, '/imgs/GreenBrain.png', 'GreenBrain')"></div>
-            <div class="color-option" style="background-color: #22d3ee;" onclick="changeTextColor('#22d3ee', this, '/imgs/LightBlue.png', 'LightBlue')"></div>
+            <div class="color-option" style="background-color: #22d3ee;" onclick="changeTextColor('#22d3ee', this, '/imgs/LightBlue.png', 'LightBlueBrain')"></div>
             <div class="color-option" style="background-color: #3b82f6;" onclick="changeTextColor('#3b82f6', this, '/imgs/BlueBrain.png', 'BlueBrain')"></div>
             <div class="color-option" style="background-color: #a855f7;" onclick="changeTextColor('#a855f7', this, '/imgs/PurpleBrain.png', 'PurpleBrain')"></div>
-            <div class="color-option" style="background-color: #ec4899;" onclick="changeTextColor('#ec4899', this, '/imgs/RedBrain.png', 'RedBrain')"></div>
+            <div class="color-option" style="background-color: #ec4899;" onclick="changeTextColor('#ec4899', this, '/imgs/PinkBrain.png', 'PinkBrain')"></div>
         </div>
 
         <input type="hidden" id="selected-color" name="color" value="WhiteBrain">

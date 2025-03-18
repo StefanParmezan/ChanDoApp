@@ -36,7 +36,7 @@ element{
   position: relative;
 }
 .header .search-bar input {
-  width: 100%;
+  width: 99%;
   height: 45px;
   padding: 10px;
   border-radius: 20px;
@@ -60,7 +60,7 @@ fa-bars-icon{
   display: flex;
   align-items: center;
   font-size: 21px;
-  margin-left: 2%;
+  margin-left: 7%;
 }
 .header .points .fa-star {
   margin-right: 5px;
@@ -340,6 +340,10 @@ fa-bars-icon{
   .grid {
     display: flex;
     flex-direction: row; /* Изменяем направление на вертикальное */
+  }
+
+  .header .search-bar input {
+    width: 82%;
   }
 }
 

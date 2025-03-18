@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "habit")
 public class Habit {
 
     @Id
@@ -18,13 +17,16 @@ public class Habit {
     private String color;
 
     @Column(name = "streak")
-    private Integer streak; // Используем Integer, чтобы поддерживать null
+    private Integer streak = 0; // Стрик
 
-    @Column(name = "last_visit_date_time")
-    private LocalDateTime lastVisitDateTime; // Изменено на LocalDateTime
+    @Column(name = "stars")
+    private Integer stars = 0; // Звезды
+
+    @Column(name = "last_completed_date_time")
+    private LocalDateTime lastCompletedDateTime; // Время последнего выполнения
 
     @Column(name = "start_date")
-    private LocalDate startDate;
+    private LocalDate startDate; // Дата начала привычки
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -64,19 +66,27 @@ public class Habit {
     }
 
     public Integer getStreak() {
-        return streak != null ? streak : 0; // Возвращаем 0, если streak == null
+        return streak != null ? streak : 0;
     }
 
     public void setStreak(Integer streak) {
         this.streak = streak;
     }
 
-    public LocalDateTime getLastVisitDateTime() {
-        return lastVisitDateTime;
+    public Integer getStars() {
+        return stars != null ? stars : 0;
     }
 
-    public void setLastVisitDateTime(LocalDateTime lastVisitDateTime) {
-        this.lastVisitDateTime = lastVisitDateTime;
+    public void setStars(Integer stars) {
+        this.stars = stars;
+    }
+
+    public LocalDateTime getLastCompletedDateTime() {
+        return lastCompletedDateTime;
+    }
+
+    public void setLastCompletedDateTime(LocalDateTime lastCompletedDateTime) {
+        this.lastCompletedDateTime = lastCompletedDateTime;
     }
 
     public LocalDate getStartDate() {

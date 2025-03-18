@@ -5,62 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cef902a5-20b5-4c20-8cae-036c4e35b75f" name="Changes" comment="Закончена регистрация и логина, скоро будет добавлена логика добавления привычек">
-      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChanDoApp-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChanDoApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChanDoApp-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChanDoApp-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitAddController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitAddController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/models/Habit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/models/Habit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/chanDoAppApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/HabitAddController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/HabitListController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/LogInController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/MainPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/listeners/CustomHttpSessionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/models/Habit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/repositories/HabitRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/repositories/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/CustomUserDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/HabitAddService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/HabitListService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/LoginResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/RegistrationResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/RegistrationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/StreakService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/HabitAdd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/HabitList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/LogIn.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/MainPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/Registration.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/BlueBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/Brain-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/ChanDo_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/GreenBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/LightBlue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/OrangeBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/PinkBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/ProfileSt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/PurpleBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/RedBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/WhiteBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/YellowBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/eye-icon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/HabitAdd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/HabitList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/Registration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/HabitAdd.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/HabitList.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/LogIn.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/MainPage.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/Registration.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/HabitAddService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/HabitAddService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/StreakService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/StreakService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/HabitAdd.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/HabitAdd.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/HabitList.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/HabitList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/HabitAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/HabitAdd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/HabitList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/HabitList.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-local-repo/com.ChanDoTeam/ChanDoApp/0.0.1-SNAPSHOT/ChanDoApp-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/project-local-repo/com.ChanDoTeam/ChanDoApp/0.0.1-SNAPSHOT/ChanDoApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoAppApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoAppApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoAppApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoAppApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,33 +81,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.ChanDoAppApplicationTests.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ChanDoAppApplication.executor": "Run",
-    "Spring Boot.chanDoAppApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/StefanParmezan/Desktop/Home/MyFiles/Programming/ChanDoApplication",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.ChanDoAppApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ChanDoAppApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.chanDoAppApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/StefanParmezan/Desktop/Home/MyFiles/Programming/ChanDoApplication&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main" />
@@ -338,7 +302,10 @@
       <workItem from="1742197153920" duration="1081000" />
       <workItem from="1742209090199" duration="6255000" />
       <workItem from="1742223664809" duration="1227000" />
-      <workItem from="1742231770243" duration="3719000" />
+      <workItem from="1742231770243" duration="5484000" />
+      <workItem from="1742273505878" duration="15954000" />
+      <workItem from="1742310158359" duration="4730000" />
+      <workItem from="1742320097797" duration="4353000" />
     </task>
     <task id="LOCAL-00001" summary="Практически закончена логика регистрации пользователей">
       <option name="closed" value="true" />

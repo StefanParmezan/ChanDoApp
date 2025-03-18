@@ -217,7 +217,7 @@ body {
 /* Медиазапросы для адаптивности */
 @media (max-width: 460px) {
   .container {
-    margin-left: 18%;
+    margin-left: 28%;
   }
   body {
     margin-left: 2%;

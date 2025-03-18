@@ -20,8 +20,7 @@
       </label>
     </div>
     <div class="points">
-      <span class="star-text">0</span>
-      <i class="fas fa-star"></i>
+      <span class="fas fa-star">0</span>
     </div>
   </div>
 
@@ -36,7 +35,7 @@
           <div class="stats">
             <div>
               <span class="ppoo">Старт</span>
-              <span style="color: #00aaff">${habit.startDate?string["dd-MM-yyyy"]!"N/A"}</span>
+              <span style="color: #00aaff">${habit.startDate!"N/A"}</span>
             </div>
             <div>
               <span class="pop">Стрик</span>

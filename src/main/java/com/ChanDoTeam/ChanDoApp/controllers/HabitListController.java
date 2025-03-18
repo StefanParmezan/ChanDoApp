@@ -4,6 +4,7 @@ import com.ChanDoTeam.ChanDoApp.models.Habit;
 import com.ChanDoTeam.ChanDoApp.models.User;
 import com.ChanDoTeam.ChanDoApp.repositories.HabitRepository;
 import com.ChanDoTeam.ChanDoApp.services.HabitListService;
+import com.ChanDoTeam.ChanDoApp.services.StreakService;
 import com.ChanDoTeam.ChanDoApp.services.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,27 +22,22 @@ public class HabitListController {
 
     private final HabitListService habitListService;
     private final UserService userService;
-    private final HabitRepository habitRepository;
+    private final StreakService streakService;
 
     @GetMapping("/habitlist")
     public String showHabits(Model model, Authentication authentication) {
-        // Получаем текущего аутентифицированного пользователя
+        // Получаем текущего пользователя
         String username = authentication.getName();
-        log.info("Loading habits for user: {}", username);
-
-        // Находим пользователя в базе данных
         User user = userService.getUserByUsername(username)
-                .orElseThrow(() -> {
-                    log.error("User not found: {}", username);
-                    return new RuntimeException("User not found");
-                });
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
-        // Получаем список привычек пользователя
-        List<Habit> habits = habitRepository.findByUser(user);
-        log.info("Loaded {} habits for user: {}", habits.size(), username);
+        // Обновляем стрик для пользователя
+        streakService.updateStreakForUser(user);
 
-        // Передаем данные в шаблон
+        // Получаем список привычек
+        List<Habit> habits = habitListService.getHabitsByUserId(user.getId());
         model.addAttribute("habits", habits);
+
         return "habitlist";
     }
 }

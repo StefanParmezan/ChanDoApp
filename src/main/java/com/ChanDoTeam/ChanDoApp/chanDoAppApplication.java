@@ -9,5 +9,5 @@ public class chanDoAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(chanDoAppApplication.class, args);
 	}
-		
+
 }

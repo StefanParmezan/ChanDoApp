@@ -1,6 +1,7 @@
 com\ChanDoTeam\ChanDoApp\repositories\HabitRepository.class
 com\ChanDoTeam\ChanDoApp\controllers\MainPageController.class
 com\ChanDoTeam\ChanDoApp\models\Habit.class
+com\ChanDoTeam\ChanDoApp\services\StreakService.class
 com\ChanDoTeam\ChanDoApp\chanDoAppApplication.class
 com\ChanDoTeam\ChanDoApp\controllers\RegistrationController.class
 com\ChanDoTeam\ChanDoApp\controllers\LogInController.class

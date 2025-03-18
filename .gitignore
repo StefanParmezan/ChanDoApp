@@ -1,4 +1,3 @@
 /resources/application.properties
-.idea
-.mvn
-
+.idea/
+.mvn/
