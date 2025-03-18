@@ -4,7 +4,7 @@
       'BlueBrain.png': '#00aaff',   // Синий
       'PurpleBrain.png': '#A340FD',   // Розовый
       'GreenBrain.png': '#59F585', // Оранжевый
-      'LightBlue.png': '#30E4F2',
+      'LightBlueBrain.png': '#30E4F2',
       'OrangeBrain.png': '#F08A3D',
       'RedBrain.png': '#EF6475',
       'YellowBrain.png': '#F5D312'
