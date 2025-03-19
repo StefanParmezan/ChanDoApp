@@ -19,9 +19,6 @@ public class Habit {
     @Column(name = "streak")
     private Integer streak = 0; // Стрик
 
-    @Column(name = "stars")
-    private Integer stars = 0; // Звезды
-
     @Column(name = "last_completed_date_time")
     private LocalDateTime lastCompletedDateTime; // Время последнего выполнения
 
@@ -71,14 +68,6 @@ public class Habit {
 
     public void setStreak(Integer streak) {
         this.streak = streak;
-    }
-
-    public Integer getStars() {
-        return stars != null ? stars : 0;
-    }
-
-    public void setStars(Integer stars) {
-        this.stars = stars;
     }
 
     public LocalDateTime getLastCompletedDateTime() {
