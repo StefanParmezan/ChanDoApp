@@ -21,8 +21,8 @@ import java.util.List;
 public class HabitListController {
 
     private final HabitListService habitListService;
-    private final UserService userService;
     private final StreakService streakService;
+    private final UserService userService;
 
     @GetMapping("/habitlist")
     public String showHabits(Model model, Authentication authentication) {
@@ -31,12 +31,15 @@ public class HabitListController {
         User user = userService.getUserByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        // Обновляем стрик для пользователя
+        // Обновляем стрик и звезды
         streakService.updateStreakForUser(user);
 
         // Получаем список привычек
         List<Habit> habits = habitListService.getHabitsByUserId(user.getId());
+
+        // Передаем данные в модель
         model.addAttribute("habits", habits);
+        model.addAttribute("totalStars", user.getTotalStars());
 
         return "habitlist";
     }

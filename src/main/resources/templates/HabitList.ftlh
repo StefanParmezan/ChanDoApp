@@ -20,7 +20,7 @@
       </label>
     </div>
     <div class="points">
-      <span class="fas fa-star">0</span>
+      <span class="fas fa-star">${totalStars}</span>
     </div>
   </div>
 
