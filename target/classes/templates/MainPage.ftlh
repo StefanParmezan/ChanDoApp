@@ -27,48 +27,37 @@
         />
       </div>
       <div class="menu">
-        <button class="menu-item profile">
-          <a href="/profile">
-            <img
-              alt="Profile picture"
-              height="40"
-              src="./imgs/ProfileSt.png"
-              width="40"
-            />
-            <span class="profille">Профиль</span>
-          </a>
-        </button>
-        <button class="menu-item premium">
-          <a href="/premium">
+        <a href="/profile" class="menu-item profile">
+          <img
+                  alt="Profile picture"
+                  height="40"
+                  src="./imgs/ProfileSt.png"
+                  width="40"
+          />
+          <span class="profile">Профиль</span>
+        </a>
+        <div class="menu">
+          <a href="/premium" class="menu-item premium">
             <i class="fas fa-star"></i>
             <span>Премиум</span>
           </a>
-        </button>
-        <button class="menu-item">
-          <a href="/habitlist">
+          <a href="/habitlist" class="menu-item">
             <i class="fas fa-home"></i>
             <span>Ваши привычки</span>
           </a>
-        </button>
-        <button class="menu-item">
-          <a href="/achievements">
+          <a href="/achievements" class="menu-item">
             <i class="fas fa-trophy"></i>
             <span>Достижения</span>
           </a>
-        </button>
-        <button class="menu-item">
-          <a href="/support">
+          <a href="/support" class="menu-item">
             <i class="fas fa-question-circle"></i>
             <span>Поддержка</span>
           </a>
-        </button>
-        <button class="menu-item">
-          <a href="/login">
+          <a href="/login" class="menu-item">
             <i class="fas fa-sign-out-alt"></i>
             <span>Выход</span>
           </a>
-        </button>
-      </div>
+        </div>
     </div>
   </body>
 </html>

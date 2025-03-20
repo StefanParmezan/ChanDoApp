@@ -129,4 +129,16 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('year-input').value = today.getFullYear();
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Находим элементы
+    const titleInput = document.getElementById('text-to-change');
+    const errorMessage = document.getElementById('error-display');
 
+    // Если есть сообщение об ошибке
+    if (errorMessage) {
+        // Добавляем обработчик события 'focus' на поле ввода
+        titleInput.addEventListener('focus', () => {
+            errorMessage.style.display = 'none'; // Скрываем сообщение об ошибке
+        });
+    }
+});

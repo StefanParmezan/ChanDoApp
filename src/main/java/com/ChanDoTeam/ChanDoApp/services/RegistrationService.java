@@ -33,7 +33,7 @@ public class RegistrationService {
                                              String password,
                                              String confirmPassword,
                                              int age, // Changed from byte to int
-                                             String email) {
+                                             int telegramId) {
         logger.debug("Проверка существования пользователя: {}", username);
 
         Optional<User> existingUser = userRepository.findByUsername(username);
@@ -41,15 +41,14 @@ public class RegistrationService {
             return new RegistrationResponse(null, null, "Пользователь уже существует");
         }
 
-        Optional<User> existingEmail = userRepository.findByEmail(email);
+        Optional<User> existingEmail = userRepository.findByTelegramId(telegramId);
         if (existingEmail.isPresent()) {
             return new RegistrationResponse(null, null, "Email уже занят");
         }
 
-        String emailRegex = "^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-        if (!email.matches(emailRegex)) {
-            return new RegistrationResponse(null, null, "Некорректный email");
-        }
+        /*if (!telegramId.matches(emailRegex)) {
+            return new RegistrationResponse(null, null, "Некорректный TelegramId");
+        }*/
 
         if (age < 0 || age > 100) {
             return new RegistrationResponse(null, null, "Возраст должен быть 0-100");
@@ -67,8 +66,8 @@ public class RegistrationService {
         newUser.setUsername(username);
         newUser.setPassword(passwordEncoder.encode(password));
         newUser.setAge(age); // Используем setAge вместо setDate
-        newUser.setEmail(email);
-
+        newUser.setTelegramId(telegramId);
+        logger.debug("Регистация пользователя: {}", newUser);
         userRepository.save(newUser);
 
         return new RegistrationResponse(newUser, "Успешная регистрация", null);
@@ -82,14 +81,10 @@ public class RegistrationService {
     }
 
     private boolean isCommonPassword(String password) {
-        String[] common = {"12345678", "password", "qwertyui"};
+        String[] common = {"12345678", "password", "qwertyui", "0987654321", "123456789"};
         for (String p : common) {
             if (password.equalsIgnoreCase(p)) return true;
         }
         return false;
-    }
-
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
     }
 }

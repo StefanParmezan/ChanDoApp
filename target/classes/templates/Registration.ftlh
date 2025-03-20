@@ -62,8 +62,8 @@
     <form action="/registration" method="post">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <input type="text" name="username" placeholder="Имя" value="${username!''}" required/>
-        <input type="text" name="email" placeholder="Ваш email" value="${email!''}" required/>
-        <input type="number" name="date" placeholder="Возраст (0-100)" min="0" max="100" value="${date!''}" required/>
+        <input type="text" name="telegramId" placeholder="Ваш TelegramID" value="${telegramId!''}" required/>
+        <input type="number" name="age" placeholder="Возраст (0-100)" min="0" max="100" value="${age!''}" required/>
         <div class="password-container">
             <input type="password" id="password" name="password" placeholder="Пароль (A-Z), 8 символов, (!-*)" maxlength="30" required/>
             <img src="./imgs/eye-icon.gif" class="toggle-password" onclick="togglePasswordVisibility('password')" style="width: 33px; height: 19px;" alt="eye icon"/>

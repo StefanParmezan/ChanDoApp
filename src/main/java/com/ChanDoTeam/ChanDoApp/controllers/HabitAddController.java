@@ -2,8 +2,8 @@ package com.ChanDoTeam.ChanDoApp.controllers;
 
 import com.ChanDoTeam.ChanDoApp.models.Habit;
 import com.ChanDoTeam.ChanDoApp.models.User;
-import com.ChanDoTeam.ChanDoApp.repositories.HabitRepository;
 import com.ChanDoTeam.ChanDoApp.services.HabitAddService;
+import com.ChanDoTeam.ChanDoApp.services.HabitAddResponse;
 import com.ChanDoTeam.ChanDoApp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -22,28 +22,26 @@ import java.time.LocalDateTime;
 public class HabitAddController {
 
     private final UserService userService;
-    private final HabitRepository habitRepository;
     private final HabitAddService habitAddService;
 
     @Autowired
     public HabitAddController(
             UserService userService,
-            HabitRepository habitRepository,
             HabitAddService habitAddService
     ) {
         this.userService = userService;
-        this.habitRepository = habitRepository;
         this.habitAddService = habitAddService;
     }
 
     @GetMapping("/habitadd")
     public String showAddForm(Model model) {
+        // Добавляем текущую дату в модель для формы
         LocalDate today = LocalDate.now();
         model.addAttribute("day", today.getDayOfMonth());
         model.addAttribute("month", today.getMonthValue());
         model.addAttribute("year", today.getYear());
 
-        return "habitadd";
+        return "habitadd"; // Возвращаем форму добавления привычки
     }
 
     @PostMapping("/habitadd")
@@ -55,8 +53,9 @@ public class HabitAddController {
             @AuthenticationPrincipal UserDetails userDetails,
             Model model
     ) {
+        // Получаем текущего пользователя
         User user = userService.getUserByUsername(userDetails.getUsername())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElse(null);
 
         // Объединяем день, месяц и год в LocalDate
         LocalDate startDate = LocalDate.of(year, month, day);
@@ -65,15 +64,16 @@ public class HabitAddController {
         // Устанавливаем начальное значение lastCompletedDateTime
         habit.setLastCompletedDateTime(LocalDateTime.now());
 
-        try {
-            // Используем сервис для добавления привычки
-            habitAddService.addHabit(habit, user);
-        } catch (IllegalArgumentException e) {
-            // Если привычка уже существует, возвращаем ошибку на страницу
-            model.addAttribute("error", e.getMessage());
-            return "habitadd"; // Возвращаемся к форме добавления
+        // Пытаемся добавить привычку через сервис
+        HabitAddResponse response = habitAddService.addHabit(habit, user);
+
+        // Если есть ошибка, добавляем сообщение в модель
+        if (!response.isSuccess()) {
+            model.addAttribute("error", response.getErrorMessage());
+            return "habitadd";
         }
 
+        // Если успех, перенаправляем на список привычек
         return "redirect:/habitlist";
     }
 }

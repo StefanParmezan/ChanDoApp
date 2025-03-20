@@ -52,7 +52,7 @@ public class StreakService {
 
                     // Бонусные звезды за кратность 5
                     if (newStreak % 5 == 0) {
-                        habit.setStars(habit.getStars() + 2); // +3 бонусные звезды
+                        habit.setStars(habit.getStars() + 1); // +3 бонусные звезды
                     }
                 } else {
                     // Интервал еще не истек

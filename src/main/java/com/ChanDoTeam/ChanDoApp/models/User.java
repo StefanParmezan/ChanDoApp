@@ -15,12 +15,15 @@ public class User {
     private String password;
 
     @Column(unique = true) // Уникальный email
-    private String email;
+    private int telegramId;
 
     private int age; // Возраст пользователя
 
     @Column(name = "total_stars")
     private Integer totalStars = 0; // Общее количество звезд пользователя
+
+    @Column(name = "is_premium")
+    private boolean isPremium = false; // Флаг премиум-статуса
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Habit> habits;
@@ -50,12 +53,12 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public int getTelegramId() {
+        return telegramId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTelegramId(int telegramId) {
+        this.telegramId = telegramId;
     }
 
     public int getAge() {
@@ -72,6 +75,14 @@ public class User {
 
     public void setTotalStars(Integer totalStars) {
         this.totalStars = totalStars;
+    }
+
+    public boolean isPremium() {
+        return isPremium;
+    }
+
+    public void setPremium(boolean premium) {
+        isPremium = premium;
     }
 
     public List<Habit> getHabits() {

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import com.ChanDoTeam.ChanDoApp.models.User;
 
 @Controller
 public class RegistrationController {
@@ -19,8 +20,8 @@ public class RegistrationController {
     private static final Logger logger = LoggerFactory.getLogger(RegistrationController.class);
 
     @Autowired
-    public RegistrationController(RegistrationService registrationService) {
-        this.registrationService = registrationService;
+    public RegistrationController(RegistrationService RegistrationService) {
+        this.registrationService = RegistrationService;
     }
 
     @GetMapping("/registration")
@@ -33,12 +34,12 @@ public class RegistrationController {
     public String registerUser(@RequestParam String username,
                                @RequestParam String password,
                                @RequestParam String confirmPassword,
-                               @RequestParam byte date,
-                               @RequestParam String email,
+                               @RequestParam int age,
+                               @RequestParam int telegramId,
                                Model model,
                                RedirectAttributes redirectAttributes) {
 
-        RegistrationResponse response = registrationService.registerUser(username, password, confirmPassword, date, email);
+        RegistrationResponse response = registrationService.registerUser(username, password, confirmPassword, age, telegramId);
 
         if (response.isSuccess()) {
             // Передаем имя пользователя и пароль через RedirectAttributes
@@ -46,8 +47,8 @@ public class RegistrationController {
         } else {
             // Передаем в модель только те данные, которые не должны очищаться
             model.addAttribute("username", username);
-            model.addAttribute("email", email);
-            model.addAttribute("date", date);
+            model.addAttribute("telegramId", telegramId );
+            model.addAttribute("age", age);
             model.addAttribute("errorMessage", response.getErrorMessage());
             return "Registration"; // Возвращаем на страницу регистрации с сообщением об ошибке
         }
