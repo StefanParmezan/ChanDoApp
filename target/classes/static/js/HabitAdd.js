@@ -168,24 +168,3 @@ function hideErrorOnInteraction() {
 document.addEventListener('DOMContentLoaded', () => {
     hideErrorOnInteraction();
 });
-// Функция для валидации и отправки формы
-
-// Функция для отображения ошибки в модальном окне
-
-// Функция для закрытия модального окна
-function closeModal() {
-    const modal = document.getElementById('error-modal');
-    modal.style.display = 'none';
-}
-
-// Функция для изменения цвета текста и иконки
-
-
-// Инициализация событий
-document.addEventListener('DOMContentLoaded', () => {
-    // Добавляем обработчики событий для скрытия ошибки при взаимодействии с полями
-    const inputs = document.querySelectorAll('input, select');
-    inputs.forEach(input => {
-        input.addEventListener('focus', closeModal);
-    });
-});

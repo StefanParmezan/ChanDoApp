@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,7 @@ public class RegistrationService {
     private final UserRepository userRepository;
     private static final Logger logger = LoggerFactory.getLogger(RegistrationService.class);
     private final BCryptPasswordEncoder passwordEncoder;
+
 
     @Autowired
     public RegistrationService(UserRepository userRepository,

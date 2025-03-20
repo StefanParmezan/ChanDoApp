@@ -14,6 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.ChanDoTeam.ChanDoApp.models.User;
 
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+
 @Controller
 public class RegistrationController {
     private final RegistrationService registrationService;
@@ -36,21 +42,68 @@ public class RegistrationController {
                                @RequestParam String confirmPassword,
                                @RequestParam int age,
                                @RequestParam int telegramId,
+                               @RequestParam int month,
+                               @RequestParam int year,
                                Model model,
                                RedirectAttributes redirectAttributes) {
 
         RegistrationResponse response = registrationService.registerUser(username, password, confirmPassword, age, telegramId);
-
         if (response.isSuccess()) {
-            // Передаем имя пользователя и пароль через RedirectAttributes
-            return "redirect:/login"; // Перенаправляем на страницу логина
+            // Формируем дату регистрации в нужном формате
+            String formattedRegistrationDate = formatRegistrationDate(month, year);
+
+            // Передаём дату регистрации в сервис или модель User
+            User registeredUser = new User();
+            registeredUser.setUsername(username);
+            registeredUser.setPassword(password); // Убедитесь, что пароль хранится безопасно (хэширование)
+            registeredUser.setAge(age);
+            registeredUser.setTelegramId(telegramId);
+            registeredUser.setRegistrationDate(formattedRegistrationDate);
+
+            // Логируем успешную регистрацию
+            logger.info("Пользователь {} успешно зарегистрирован. Дата регистрации: {}", username, formattedRegistrationDate);
+
+            // Перенаправляем на страницу логина
+            return "redirect:/login";
         } else {
             // Передаем в модель только те данные, которые не должны очищаться
             model.addAttribute("username", username);
-            model.addAttribute("telegramId", telegramId );
+            model.addAttribute("telegramId", telegramId);
             model.addAttribute("age", age);
             model.addAttribute("errorMessage", response.getErrorMessage());
             return "Registration"; // Возвращаем на страницу регистрации с сообщением об ошибке
         }
+    }
+
+    /**
+     * Метод для форматирования даты регистрации в формате "месяца год".
+     * Например: "января 2025".
+     *
+     * @param month месяц (1-12)
+     * @param year год
+     * @return отформатированная строка даты
+     */
+    private String formatRegistrationDate(int month, int year) {
+        // Получаем название месяца в именительном падеже
+        String monthName = LocalDate.of(year, month, 1)
+                .getMonth()
+                .getDisplayName(TextStyle.FULL_STANDALONE, new Locale("ru"))
+                .toLowerCase();
+
+        // Список месяцев, которые требуют особого склонения
+        Map<String, String> specialCases = new HashMap<>();
+        specialCases.put("март", "марта");
+        specialCases.put("август", "августа");
+
+        // Если месяц есть в списке исключений, используем его склоненную форму
+        if (specialCases.containsKey(monthName)) {
+            monthName = specialCases.get(monthName);
+        } else {
+            // Для остальных месяцев добавляем окончание "-а"
+            monthName = monthName.substring(0, monthName.length() - 1) + "я";
+        }
+
+        // Формируем итоговую строку
+        return monthName + " " + year;
     }
 }
