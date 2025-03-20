@@ -189,6 +189,7 @@ body {
 .color-option:focus {
   outline: none; /* Убирает обводку при фокусе */
 }
+
 .button-group {
   display: flex;
   justify-content: center;

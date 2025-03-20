@@ -97,28 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('year-input').value = today.getFullYear();
 });
 
-function goBack() {
-    window.location.href = "/habitlist";
-}
-
-function validateAndSubmit() {
-    const day = document.getElementById('day-input').value;
-    const month = document.getElementById('month-input').value;
-    const year = document.getElementById('year-input').value;
-
-    // Проверка корректности даты
-    const date = new Date(`${year}-${month}-${day}`);
-    if (isNaN(date.getTime())) {
-        alert('Некорректная дата! Проверьте введенные значения');
-        return false;
-    }
-
-    // Форматируем дату в YYYY-MM-DD и устанавливаем в скрытое поле
-    const formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-    document.getElementById('start-date').value = formattedDate;
-
-    return true;
-}
 
 document.addEventListener('DOMContentLoaded', function () {
     const today = new Date();
@@ -141,4 +119,52 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMessage.style.display = 'none'; // Скрываем сообщение об ошибке
         });
     }
+});
+
+// Функция для отображения ошибки
+function showError(message) {
+    const buttonGroup = document.querySelector('.button-group');
+    const errorBlock = document.querySelector('.error-message');
+
+    // Если блок ошибки уже существует, обновляем его текст
+    if (errorBlock) {
+        errorBlock.textContent = message;
+    } else {
+        // Создаем новый блок ошибки
+        const newErrorBlock = document.createElement('p');
+        newErrorBlock.className = 'error-message';
+        newErrorBlock.style.color = 'red';
+        newErrorBlock.textContent = message;
+
+        // Заменяем кнопку на сообщение об ошибке
+        buttonGroup.innerHTML = ''; // Очищаем содержимое кнопки
+        buttonGroup.appendChild(newErrorBlock);
+    }
+}
+
+// Функция для скрытия ошибки при взаимодействии с полями
+function hideErrorOnInteraction() {
+    const inputs = document.querySelectorAll('input, select');
+    const buttonGroup = document.querySelector('.button-group');
+
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            // Удаляем блок ошибки, если он существует
+            const errorBlock = document.querySelector('.error-message');
+            if (errorBlock) {
+                buttonGroup.removeChild(errorBlock);
+
+                // Восстанавливаем кнопку "Начать"
+                const submitButton = document.createElement('button');
+                submitButton.type = 'submit';
+                submitButton.textContent = 'Начать';
+                buttonGroup.appendChild(submitButton);
+            }
+        });
+    });
+}
+
+// Инициализация событий
+document.addEventListener('DOMContentLoaded', () => {
+    hideErrorOnInteraction();
 });

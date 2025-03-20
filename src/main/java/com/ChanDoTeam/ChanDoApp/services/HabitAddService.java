@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class HabitAddService {
@@ -14,13 +15,6 @@ public class HabitAddService {
     @Autowired
     private HabitRepository habitRepository;
 
-    /**
-     * Добавляет новую привычку для пользователя.
-     *
-     * @param habit Новая привычка.
-     * @param user  Пользователь, которому принадлежит привычка.
-     * @return Объект HabitAddResponse с результатом операции.
-     */
     public HabitAddResponse addHabit(Habit habit, User user) {
         try {
             // Валидация данных
@@ -29,6 +23,12 @@ public class HabitAddService {
             // Проверяем, существует ли привычка с таким названием у пользователя
             if (habitRepository.existsByTitleAndUserId(habit.getTitle(), user.getId())) {
                 return new HabitAddResponse(null, "Эта привычка уже существует");
+            }
+
+            // Проверяем лимит привычек для бесплатного аккаунта
+            List<Habit> userHabits = habitRepository.findByUserId(user.getId());
+            if (userHabits.size() >= 5 && !user.isPremium()) {
+                return new HabitAddResponse(null, "Достигнут лимит привычек для бесплатного аккаунта. Приобретите премиум для добавления дополнительных привычек.");
             }
 
             // Устанавливаем значения по умолчанию
@@ -48,12 +48,6 @@ public class HabitAddService {
         }
     }
 
-    /**
-     * Валидация данных привычки.
-     *
-     * @param habit Привычка для валидации.
-     * @throws IllegalArgumentException Если данные невалидны.
-     */
     private void validateHabit(Habit habit) {
         if (habit == null) {
             throw new IllegalArgumentException("Привычка не может быть null");

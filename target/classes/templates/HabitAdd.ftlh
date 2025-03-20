@@ -71,16 +71,19 @@
         <!-- Скрытое поле для выбранного цвета -->
         <input type="hidden" id="selected-color" name="color" value="WhiteBrain">
 
-        <!-- Блок для отображения ошибок -->
-        <#if error??>
-            <p style="color: red; margin-bottom: 1rem;">${error}</p>
-        </#if>
-
         <!-- Кнопка отправки формы -->
         <div class="button-group">
             <button type="submit">Начать</button>
         </div>
     </form>
+
+    <!-- Модальное окно -->
+    <div id="error-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="error-message"></p>
+        </div>
+    </div>
 </div>
 </body>
 </html>
