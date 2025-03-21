@@ -4,14 +4,21 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import com.ChanDoTeam.ChanDoApp.models.*;
 
 @Controller
 public class ProfileController {
 
     @GetMapping("/profile")
     public String showProfilePage() {
+
+
+
         return "Profile"; // Возвращает имя представления (profile.html или profile.jsp)
     }
+
+
+
 
     @GetMapping("/achievements")
     public String showAchievementsPage() {

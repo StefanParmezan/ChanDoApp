@@ -45,9 +45,9 @@
             <i class="fas fa-home"></i>
             <span>Ваши привычки</span>
           </a>
-          <a href="/achievements" class="menu-item">
-            <i class="fas fa-trophy"></i>
-            <span>Достижения</span>
+          <a href="/shop" class="menu-item">
+            <i class="fas fa-search"></i>
+            <span>Магазин</span>
           </a>
           <a href="/support" class="menu-item">
             <i class="fas fa-question-circle"></i>
@@ -58,6 +58,7 @@
             <span>Выход</span>
           </a>
         </div>
+    </div>
     </div>
   </body>
 </html>

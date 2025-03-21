@@ -1,6 +1,8 @@
 package com.ChanDoTeam.ChanDoApp.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
@@ -17,6 +19,9 @@ public class User {
     private String username;
     private String password;
     private String RegistrationDate;
+    private int level;
+    private String avatar;
+
 
     @Column(unique = true) // Уникальный email
     private int telegramId;
@@ -29,6 +34,7 @@ public class User {
     @Column(name = "is_premium")
     private boolean isPremium = false; // Флаг премиум-статуса
 
+    private int totalachivements;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Habit> habits;
@@ -101,9 +107,34 @@ public class User {
     public void setRegistrationDate(String registrationDate) {
         RegistrationDate = registrationDate;
     }
+
     public String getRegistrationDate() {
         return RegistrationDate;
     }
+
+    public int getLevel(){
+        return level;
+    }
+    public void setLevel(int level){
+        this.level = level;
+    }
+
+    public int getTotalachivements() {
+        return totalachivements;
+    }
+
+    public void setTotalachivements(int totalachivements) {
+        this.totalachivements = totalachivements;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
 
     // Метод для обновления totalStars
     public void updateTotalStars() {
