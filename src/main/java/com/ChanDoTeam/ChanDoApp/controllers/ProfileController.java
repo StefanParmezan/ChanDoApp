@@ -1,26 +1,35 @@
 package com.ChanDoTeam.ChanDoApp.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
-
-@RestController
-@RequestMapping("/api")
+@Controller
 public class ProfileController {
 
-    // Эндпоинт для получения данных профиля
     @GetMapping("/profile")
-    public Map<String, Object> getProfileData() {
-        Map<String, Object> profileData = new HashMap<>();
-        profileData.put("username", "Пользователь");
-        profileData.put("level", 5);
-        profileData.put("since", "января 2025");
-        profileData.put("achievements", "12/50");
-        profileData.put("stars", 350);
+    public String showProfilePage() {
+        return "Profile"; // Возвращает имя представления (profile.html или profile.jsp)
+    }
 
-        return profileData;
+    @GetMapping("/achievements")
+    public String showAchievementsPage() {
+        return "Achievements"; // achievements.html или achievements.jsp
+    }
+
+    @GetMapping("/settings")
+    public String showSettingsPage() {
+        return "Settings"; // settings.html или settings.jsp
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        // Логика выхода из системы
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        return "redirect:/login"; // Перенаправление на страницу входа
     }
 }

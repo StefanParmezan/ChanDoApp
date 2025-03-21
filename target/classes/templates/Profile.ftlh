@@ -3,75 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awexsome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="./css/Profile.css">
-    <script src="/js/Profile.js" type="text/javascript"></script>
+    <title>ChanDo Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/Profile.css">
 </head>
 <body>
 <div class="container">
     <!-- Header -->
-    <div class="header">
-        <a href="/mainpage" style="color: inherit; text-decoration: none;">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-        <h1>Пользователь</h1>
-        <i class="fas fa-ellipsis-v" id="menu-toggle"></i>
-        <div class="dropdown-menu" id="dropdown-menu">
-            <a href="/achievements"><i class="fas fa-trophy"></i>Достижения</a>
-            <a href="/settings"><i class="fas fa-cog"></i>Настройки</a>
-            <a href="/login"><i class="fas fa-sign-out-alt"></i>Выйти</a>
+    <header class="header">
+        <div class="header__navigation">
+            <a href="/mainpage" class="header__back-link" style="color: inherit; text-decoration: none;">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1 class="header__title">Пользователь</h1>
         </div>
-    </div>
+        <nav class="menu-links">
+            <a href="/achievements" class="menu-links__item">
+                <i class="fas fa-trophy"></i> Достижения
+            </a>
+            <a href="/settings" class="menu-links__item">
+                <i class="fas fa-cog"></i> Настройки
+            </a>
+            <a href="/logout" class="menu-links__item">
+                <i class="fas fa-sign-out-alt"></i> Выйти
+            </a>
+        </nav>
+    </header>
 
     <!-- Profile Section -->
-    <div class="profile-section">
-        <div class="profile-background"></div>
-        <div class="profile-icon" id="profile-icon">Level</div>
-        <a>
-            <span>5</span>
-            <span>Уровень</span>
+    <section class="profile-section">
+        <div class="profile-section__background"></div>
+        <div class="profile-section__icon">П</div>
+        <a href="/level" class="profile-section__level-button">
+            <span class="profile-section__level-number">5</span>
+            <span class="profile-section__level-text">Уровень</span>
         </a>
-        <p style="color: #666; margin-top: 8px;">В ChanDo с <span style="color: #00b4d8;">января 2025</span></p>
-    </div>
+        <p class="profile-section__join-date">
+            В ChanDo с <span class="profile-section__date-highlight">января 2025</span>
+        </p>
+    </section>
 
     <!-- Achievements Section -->
-    <div class="achievements">
-        <div class="achievements-counter">
+    <section class="achievements">
+        <div class="achievements__counter">
             Достижения 12/50
         </div>
-        <div class="star-counter">
+        <div class="achievements__star-counter">
             <i class="fas fa-star"></i>
-            350
+            <span class="achievements__star-count">350</span>
         </div>
-    </div>
+    </section>
 
     <!-- Habits Section -->
-    <div class="habits">
-        <a href="/habitadd">
-            <span>Добавление привычки</span>
-            <div style="display: flex; align-items: center;">
-                <i class="fas fa-chevron-right" style="margin-left: 8px;"></i>
+    <section class="habits">
+        <a href="/habitadd" class="habits__item">
+            <span class="habits__item-text">Добавление привычки</span>
+            <div class="habits__item-icon">
+                <i class="fas fa-chevron-right"></i>
             </div>
         </a>
-        <a href="/habitlist">
-            <span>Текущие привычки</span>
-            <div style="display: flex; align-items: center;">
-                <span class="badge badge-red">2</span>
-                <i class="fas fa-chevron-right" style="margin-left: 8px;"></i>
+        <a href="/habitlist" class="habits__item">
+            <span class="habits__item-text">Текущие привычки</span>
+            <div class="habits__item-badge-container">
+                <span class="badge badge-red habits__item-badge">2</span>
+                <i class="fas fa-chevron-right habits__item-icon"></i>
             </div>
         </a>
-    </div>
-</div>
-
-<!-- Modal for Avatar Selection -->
-<div id="avatar-modal" class="modal">
-    <div class="modal-content">
-        <h2 class="section-title">Выберите аватарку</h2>
-        <div id="avatars-grid" class="grid grid-cols-3 gap-4">
-        </div>
-        <button class="level-button w-full mt-4" onclick="closeModal()">Закрыть</button>
-    </div>
+    </section>
 </div>
 </body>
 </html>

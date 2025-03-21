@@ -19,3 +19,4 @@ com\ChanDoTeam\ChanDoApp\listeners\CustomHttpSessionListener.class
 com\ChanDoTeam\ChanDoApp\repositories\UserRepository.class
 com\ChanDoTeam\ChanDoApp\controllers\HabitListController.class
 com\ChanDoTeam\ChanDoApp\models\User.class
+com\ChanDoTeam\ChanDoApp\controllers\ProfileController.class

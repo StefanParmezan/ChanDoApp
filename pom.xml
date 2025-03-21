@@ -57,7 +57,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
+            <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>6.6.4.Final</version> <!-- Убедитесь, что версия актуальна -->
         </dependency>

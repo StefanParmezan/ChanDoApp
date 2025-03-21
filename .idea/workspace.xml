@@ -6,9 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="cef902a5-20b5-4c20-8cae-036c4e35b75f" name="Changes" comment="Закончена регистрация и логина, скоро будет добавлена логика добавления привычек">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/HabitAdd.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/HabitAdd.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/HabitAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/HabitAdd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/HabitAdd.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/HabitAdd.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChanDoApp-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChanDoApp-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChanDoApp-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/ProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Profile.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Profile.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-local-repo/com.ChanDoTeam/ChanDoApp/0.0.1-SNAPSHOT/ChanDoApp-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/project-local-repo/com.ChanDoTeam/ChanDoApp/0.0.1-SNAPSHOT/ChanDoApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/project-local-repo/com.ChanDoTeam/ChanDoApp/0.0.1-SNAPSHOT/ChanDoApp-0.0.1-SNAPSHOT.pom" beforeDir="false" afterPath="$PROJECT_DIR$/target/project-local-repo/com.ChanDoTeam/ChanDoApp/0.0.1-SNAPSHOT/ChanDoApp-0.0.1-SNAPSHOT.pom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoAppApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ChanDoTeam.ChanDoAppApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoApp.ChanDoAppApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoAppApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.ChanDoTeam.ChanDoAppApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +313,13 @@
       <workItem from="1742452518474" duration="909000" />
       <workItem from="1742453447884" duration="3539000" />
       <workItem from="1742460063928" duration="933000" />
-      <workItem from="1742466106642" duration="7774000" />
+      <workItem from="1742466106642" duration="11352000" />
+      <workItem from="1742477952296" duration="262000" />
+      <workItem from="1742478484373" duration="267000" />
+      <workItem from="1742478804682" duration="81000" />
+      <workItem from="1742481712748" duration="114000" />
+      <workItem from="1742489225690" duration="41000" />
+      <workItem from="1742532829631" duration="1666000" />
     </task>
     <task id="LOCAL-00001" summary="Практически закончена логика регистрации пользователей">
       <option name="closed" value="true" />
