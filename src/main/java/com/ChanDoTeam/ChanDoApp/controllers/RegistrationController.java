@@ -42,15 +42,13 @@ public class RegistrationController {
                                @RequestParam String confirmPassword,
                                @RequestParam int age,
                                @RequestParam int telegramId,
-                               @RequestParam int month,
-                               @RequestParam int year,
                                Model model,
                                RedirectAttributes redirectAttributes) {
 
         RegistrationResponse response = registrationService.registerUser(username, password, confirmPassword, age, telegramId);
         if (response.isSuccess()) {
             // Формируем дату регистрации в нужном формате
-            String formattedRegistrationDate = formatRegistrationDate(month, year);
+
 
             // Передаём дату регистрации в сервис или модель User
             User registeredUser = new User();
@@ -58,10 +56,10 @@ public class RegistrationController {
             registeredUser.setPassword(password); // Убедитесь, что пароль хранится безопасно (хэширование)
             registeredUser.setAge(age);
             registeredUser.setTelegramId(telegramId);
-            registeredUser.setRegistrationDate(formattedRegistrationDate);
+
 
             // Логируем успешную регистрацию
-            logger.info("Пользователь {} успешно зарегистрирован. Дата регистрации: {}", username, formattedRegistrationDate);
+            
 
             // Перенаправляем на страницу логина
             return "redirect:/login";
