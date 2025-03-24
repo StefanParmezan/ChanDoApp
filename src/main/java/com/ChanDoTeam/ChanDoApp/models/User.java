@@ -34,7 +34,7 @@ public class User {
     @Column(name = "is_premium")
     private boolean isPremium = false; // Флаг премиум-статуса
 
-    private int totalachivements;
+    private int totalachivements = 0;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Habit> habits;

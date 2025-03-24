@@ -15,7 +15,7 @@
         <a href="/mainpage" style="color: inherit; text-decoration: none;">
             <i class="fas fa-arrow-left"></i>
         </a>
-        <h1>Пользователь</h1>
+        <h1>${Username}</h1>
         <i class="fas fa-ellipsis-v" id="menu-toggle"></i>
         <div class="dropdown-menu" id="dropdown-menu">
             <a href="/achievements"><i class="fas fa-trophy"></i>Достижения</a>
@@ -27,22 +27,22 @@
     <!-- Profile Section -->
     <div class="profile-section">
         <div class="profile-background"></div>
-        <div class="profile-icon" id="profile-icon">П</div>
+        <div class="profile-icon" id="profile-icon"></div>
         <a href="level.html" class="level-button">
-            <span>5</span>
+            <span>${Level}</span>
             <span>Уровень</span>
         </a>
-        <p style="color: #666; margin-top: 8px;">В ChanDo с <span style="color: #00b4d8;">января 2025</span></p>
+        <p style="color: #666; margin-top: 8px;">В ChanDo с<span style="color: #00b4d8;"></span></p>
     </div>
 
     <!-- Achievements Section -->
     <div class="achievements">
         <div class="achievements-counter">
-            Достижения 12/50
+            Достижения ${Achievements}/50
         </div>
         <div class="star-counter">
             <i class="fas fa-star"></i>
-            350
+            ${Stars}
         </div>
     </div>
 
@@ -57,7 +57,7 @@
         <a href="/habitlist">
             <span>Текущие привычки</span>
             <div style="display: flex; align-items: center;">
-                <span class="badge badge-red">2</span>
+                <span class="badge badge-red">${HabitCol}</span>
                 <i class="fas fa-chevron-right" style="margin-left: 8px;"></i>
             </div>
         </a>

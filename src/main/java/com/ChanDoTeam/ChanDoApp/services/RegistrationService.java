@@ -45,7 +45,7 @@ public class RegistrationService {
 
         Optional<User> existingEmail = userRepository.findByTelegramId(telegramId);
         if (existingEmail.isPresent()) {
-            return new RegistrationResponse(null, null, "Email уже занят");
+            return new RegistrationResponse(null, null, "TelegramID уже занят!");
         }
 
         /*if (!telegramId.matches(emailRegex)) {
