@@ -37,6 +37,7 @@ public class ProfileController {
         model.addAttribute("Username", username);
         model.addAttribute("Level", user.getLevel());
         model.addAttribute("Stars", user.getTotalStars());
+        model.addAttribute("Age", user.getAge());
 
 
         return "Profile"; // Возвращает имя представления (profile.html или profile.jsp)

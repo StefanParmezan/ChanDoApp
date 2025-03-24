@@ -28,17 +28,17 @@
     <div class="profile-section">
         <div class="profile-background"></div>
         <div class="profile-icon" id="profile-icon"></div>
-        <a href="level.html" class="level-button">Z
+        <a href="level.html" class="level-button">
             <span>${Level}</span>
             <span>Уровень</span>
         </a>
-        <p style="color: #666; margin-top: 8px;">В ChanDo с<span style="color: #00b4d8;"></span></p>
+        <p style="color: #666; margin-top: 8px;">Возраст ${Age}<span style="color: #00b4d8;"></span></p>
     </div>
 
     <!-- Achievements Section -->
     <div class="achievements">
         <div class="achievements-counter">
-            Достижения ${Achievements}/50
+            Достижения ${Achievements} из 50
         </div>
         <div class="star-counter">
             <i class="fas fa-star"></i>

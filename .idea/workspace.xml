@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cef902a5-20b5-4c20-8cae-036c4e35b75f" name="Changes" comment="Закончена регистрация и логина, скоро будет добавлена логика добавления привычек">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/RegistrationService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +310,7 @@
       <workItem from="1742534709696" duration="984000" />
       <workItem from="1742535717297" duration="5038000" />
       <workItem from="1742725060788" duration="4969000" />
-      <workItem from="1742798581144" duration="4450000" />
+      <workItem from="1742798581144" duration="5459000" />
     </task>
     <task id="LOCAL-00001" summary="Практически закончена логика регистрации пользователей">
       <option name="closed" value="true" />
