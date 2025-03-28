@@ -29,7 +29,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Функция выбора аватарки
     function selectAvatar(element, index) {
+        // Обновляем изображение профиля на странице
         profileIcon.innerHTML = `<img src="${avatarImages[index]}" alt="Selected Avatar" style="width: 100%; height: 100%; border-radius: 50%;">`;
+
+        // Отправляем запрос на сервер для обновления Avatar в модели
+        fetch('/update-avatar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ avatarIndex: index })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ошибка при обновлении аватара');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Аватар успешно обновлен:', data);
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+
+        // Закрываем модальное окно
         closeModal();
     }
 

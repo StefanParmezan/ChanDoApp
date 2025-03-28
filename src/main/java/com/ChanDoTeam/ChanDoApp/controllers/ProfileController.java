@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import com.ChanDoTeam.ChanDoApp.models.*;
 import java.util.List;
 
@@ -25,7 +25,6 @@ public class ProfileController {
 
     @GetMapping("/profile")
     public String showProfilePage(Model model, Authentication authentication) {
-
         String username = authentication.getName();
         User user = userService.getUserByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found"));
@@ -38,31 +37,56 @@ public class ProfileController {
         model.addAttribute("Level", user.getLevel());
         model.addAttribute("Stars", user.getTotalStars());
         model.addAttribute("Age", user.getAge());
+        model.addAttribute("Avatar", user.getAvatar());
 
-
-        return "Profile"; // Возвращает имя представления (profile.html или profile.jsp)
+        System.out.println("User Avatar: " + user.getAvatar());
+        return "Profile";
     }
 
+    @PostMapping("/update-avatar")
+    @ResponseBody
+    public String updateAvatar(@RequestBody AvatarUpdateRequest request, Authentication authentication) {
+        String username = authentication.getName();
+        User user = userService.getUserByUsername(username)
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
+        // Обновляем аватар пользователя
+        user.setAvatar("avatar" + (request.getAvatarIndex() + 1)); // avatar1, avatar2 и т.д.
 
+        return "{\"status\":\"success\", \"avatar\":\"" + user.getAvatar() + "\"}";
+    }
 
+    // Другие методы остаются без изменений
     @GetMapping("/achievements")
     public String showAchievementsPage() {
-        return "Achievements"; // achievements.html или achievements.jsp
+        return "Achievements";
     }
 
     @GetMapping("/settings")
     public String showSettingsPage() {
-        return "Settings"; // settings.html или settings.jsp
+        return "Settings";
     }
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
-        // Логика выхода из системы
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate();
         }
-        return "redirect:/login"; // Перенаправление на страницу входа
+        return "redirect:/login";
+    }
+
+    // Внутренний класс для обработки запроса
+    private static class AvatarUpdateRequest {
+        private int avatarIndex;
+
+        // Геттеры и сеттеры
+        public int getAvatarIndex() {
+            return avatarIndex;
+        }
+
+        public void setAvatarIndex(int avatarIndex) {
+            this.avatarIndex = avatarIndex;
+        }
     }
 }

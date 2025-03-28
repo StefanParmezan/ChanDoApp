@@ -27,7 +27,7 @@
     <!-- Profile Section -->
     <div class="profile-section">
         <div class="profile-background"></div>
-        <div class="profile-icon" id="profile-icon"></div>
+        <div class="profile-icon" id="profile-icon"><img src="imgs/${Avatar}.png" alt="Selected Avatar" style="width: 100%; height: 100%; border-radius: 50%;"></div>
         <a href="level.html" class="level-button">
             <span>${Level}</span>
             <span>Уровень</span>
@@ -70,7 +70,6 @@
         <h2 class="section-title">Выберите аватарку</h2>
         <div id="avatars-grid" class="grid grid-cols-3 gap-4">
         </div>
-        <button class="level-button w-full mt-4"></button>
     </div>
 </div>
 </body>

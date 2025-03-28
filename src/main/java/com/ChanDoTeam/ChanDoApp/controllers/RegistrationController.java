@@ -61,6 +61,7 @@ public class RegistrationController {
             // Логируем успешную регистрацию
 
 
+
             // Перенаправляем на страницу логина
             return "redirect:/login";
         } else {

@@ -31,7 +31,7 @@
           <img
                   alt="Profile picture"
                   height="40"
-                  src="./imgs/ProfileSt.png"
+                  src="./imgs/${Avatar}.png"
                   width="40"
           />
           <span class="profile">Профиль</span>

@@ -20,7 +20,7 @@ public class User {
     private String password;
     private String RegistrationDate;
     private int level;
-    private String avatar;
+    private String avatar = "ProfileSt";
 
 
     @Column(unique = true) // Уникальный email
@@ -115,6 +115,7 @@ public class User {
     public int getLevel(){
         return level;
     }
+
     public void setLevel(int level){
         this.level = level;
     }
