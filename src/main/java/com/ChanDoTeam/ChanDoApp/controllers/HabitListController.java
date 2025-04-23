@@ -39,7 +39,12 @@ public class HabitListController {
         // Передаем данные в модель
         model.addAttribute("habits", habits);
         model.addAttribute("totalStars", user.getTotalStars());
+        model.addAttribute("VisibleDate");
+        for(Habit habit : habits) {
+            System.out.println(habit.getStartDate());
+            System.out.println(habit.getVisibleDate());
+        }
 
-        return "habitlist";
+        return "HabitList";
     }
 }

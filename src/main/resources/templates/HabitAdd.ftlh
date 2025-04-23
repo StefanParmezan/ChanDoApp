@@ -53,7 +53,7 @@
         </div>
 
         <!-- Скрытое поле для отправки даты -->
-        <input type="date" id="start-date" name="startDate" hidden>
+        <input type="date" id="visibleDate" name="visibleDate" hidden>
 
         <!-- Выбор цвета -->
         <p class="text-left mb-6 text-sm">Подходящий цвет</p>

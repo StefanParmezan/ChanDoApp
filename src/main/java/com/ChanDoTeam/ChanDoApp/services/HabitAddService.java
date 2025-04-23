@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -34,6 +35,7 @@ public class HabitAddService {
             // Устанавливаем значения по умолчанию
             habit.setStreak(1); // Инициализируем стрик
             habit.setUser(user); // Привязываем привычку к пользователю
+            habit.setVisibleDate(LocalDate.now());
 
             // Сохраняем привычку в базе данных
             habitRepository.save(habit);

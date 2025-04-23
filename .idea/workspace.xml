@@ -6,81 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cef902a5-20b5-4c20-8cae-036c4e35b75f" name="Changes" comment="Закончена регистрация и логина, скоро будет добавлена логика добавления привычек">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitAddController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitAddController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/HabitListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/MainPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/MainPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/ProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/RegistrationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/chanDoAppApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/HabitAddController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/HabitListController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/LogInController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/MainPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/ProfileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/controllers/RegistrationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/listeners/CustomHttpSessionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/models/Habit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/repositories/HabitRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/repositories/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/CustomUserDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/HabitAddResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/HabitAddService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/HabitListService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/LoginResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/RegistrationResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/RegistrationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/StreakService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/com/ChanDoTeam/ChanDoApp/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/HabitAdd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/HabitList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/LogIn.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/MainPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/Profile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/css/Registration.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/BlueBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/Brain-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/ChanDo_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/GreenBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/LightBlue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/LightBlueBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/OrangeBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/PinkBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/ProfileSt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/PurpleBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/RedBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/WhiteBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/YellowBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/avatar1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/avatar2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/avatar3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/avatar4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/avatar5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/avatar6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/imgs/eye-icon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/HabitAdd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/HabitList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/Profile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/static/js/Registration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/HabitAdd.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/HabitList.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/LogIn.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/MainPage.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/Profile.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/production/ChanDoApp/templates/Registration.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/imgs/avatar1.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/imgs/avatar1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/imgs/avatar2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/imgs/avatar2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/imgs/avatar3.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/imgs/avatar3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/imgs/avatar4.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/imgs/avatar4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/imgs/avatar5.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/imgs/avatar5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/imgs/avatar6.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/imgs/avatar6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/MainPage.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/MainPage.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Profile.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Profile.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/models/Habit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/models/Habit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/HabitAddService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ChanDoTeam/ChanDoApp/services/HabitAddService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/HabitList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/HabitList.ftlh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,18 +97,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\StefanParmezan\Desktop\Home\Programming\ChanDoApp\src\main\resources\static\imgs" />
       <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\static\imgs" />
       <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApplication\src\main\resources\static\imgs" />
       <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main" />
       <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\time" />
-      <recent name="C:\Users\dell\Desktop\ChanDoApp\src\main\resources\static\imgs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\StefanParmezan\Desktop\Home\Programming\ChanDoApp\src\main\resources\static\imgs" />
       <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\static\imgs" />
       <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\templates" />
       <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\static\js" />
       <recent name="C:\Users\StefanParmezan\Desktop\Home\MyFiles\Programming\ChanDoApp\src\main\resources\static\css" />
-      <recent name="C:\Users\dell\Desktop\ChanDoApp\src\main\resources\static\imgs" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.chanDoAppApplication">
@@ -397,6 +328,22 @@
       <workItem from="1743068033268" duration="646000" />
       <workItem from="1743071101152" duration="1433000" />
       <workItem from="1743149689463" duration="590000" />
+      <workItem from="1743183071102" duration="517000" />
+      <workItem from="1743228924672" duration="551000" />
+      <workItem from="1743230895038" duration="1158000" />
+      <workItem from="1743235440201" duration="59000" />
+      <workItem from="1743241027707" duration="1205000" />
+      <workItem from="1743415367683" duration="2316000" />
+      <workItem from="1743424554676" duration="124000" />
+      <workItem from="1743578566230" duration="592000" />
+      <workItem from="1743592923493" duration="740000" />
+      <workItem from="1743609439359" duration="29000" />
+      <workItem from="1743685585574" duration="184000" />
+      <workItem from="1743690741070" duration="612000" />
+      <workItem from="1743697413598" duration="51000" />
+      <workItem from="1744120533152" duration="20000" />
+      <workItem from="1745376720545" duration="3752000" />
+      <workItem from="1745390564236" duration="2701000" />
     </task>
     <task id="LOCAL-00001" summary="Практически закончена логика регистрации пользователей">
       <option name="closed" value="true" />

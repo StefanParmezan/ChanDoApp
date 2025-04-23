@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Controller
 public class HabitAddController {
@@ -58,8 +59,9 @@ public class HabitAddController {
                 .orElse(null);
 
         // Объединяем день, месяц и год в LocalDate
-        LocalDate startDate = LocalDate.of(year, month, day);
-        habit.setStartDate(startDate);
+        habit.setStartDate(LocalTime.now());
+
+        habit.setVisibleDate(LocalDate.now());
 
         // Устанавливаем начальное значение lastCompletedDateTime
         habit.setLastCompletedDateTime(LocalDateTime.now());
@@ -70,7 +72,7 @@ public class HabitAddController {
         // Если есть ошибка, добавляем сообщение в модель
         if (!response.isSuccess()) {
             model.addAttribute("error", response.getErrorMessage());
-            return "habitadd";
+            return "HabitAdd";
         }
 
         // Если успех, перенаправляем на список привычек

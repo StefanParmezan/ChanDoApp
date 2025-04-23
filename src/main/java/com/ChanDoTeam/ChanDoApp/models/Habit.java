@@ -2,8 +2,10 @@ package com.ChanDoTeam.ChanDoApp.models;
 
 import jakarta.persistence.*;
 
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 public class Habit {
@@ -26,7 +28,12 @@ public class Habit {
     private LocalDateTime lastCompletedDateTime; // Время последнего выполнения
 
     @Column(name = "start_date")
-    private LocalDate startDate; // Дата начала привычки
+    private LocalTime startDate; // Дата начала привычки
+
+    
+    @Column(name = "VisibleDate")
+    private LocalDate visibleDate;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -89,11 +96,11 @@ public class Habit {
         this.lastCompletedDateTime = lastCompletedDateTime;
     }
 
-    public LocalDate getStartDate() {
+    public LocalTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalTime startDate) {
         this.startDate = startDate;
     }
 
@@ -103,5 +110,13 @@ public class Habit {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public LocalDate getVisibleDate() {
+        return visibleDate;
+    }
+
+    public void setVisibleDate(LocalDate visibleDate) {
+        this.visibleDate = visibleDate;
     }
 }
