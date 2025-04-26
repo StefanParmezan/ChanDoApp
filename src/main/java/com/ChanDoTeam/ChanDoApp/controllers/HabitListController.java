@@ -23,6 +23,7 @@ public class HabitListController {
     private final StreakService streakService;
     private final UserService userService;
 
+
     @GetMapping("/habitlist")
     public String showHabits(Model model, Authentication authentication) {
         // Получаем текущего пользователя
@@ -33,6 +34,7 @@ public class HabitListController {
         // Обновляем стрик и звезды
         streakService.updateStreakForUser(user);
 
+
         // Получаем список привычек
         List<Habit> habits = habitListService.getHabitsByUserId(user.getId());
 
@@ -41,7 +43,7 @@ public class HabitListController {
         model.addAttribute("totalStars", user.getTotalStars());
         model.addAttribute("VisibleDate");
         for(Habit habit : habits) {
-            System.out.println(habit.getStartDate());
+            System.out.println(habit.getNotificationTime());
             System.out.println(habit.getVisibleDate());
         }
 

@@ -24,7 +24,9 @@ public class User {
 
 
     @Column(unique = true) // Уникальный email
-    private int telegramId;
+    private String telegramId;
+
+    private boolean notifiedToday = false; // Статус уведомления за сегодня
 
     private int age; // Возраст пользователя
 
@@ -64,11 +66,11 @@ public class User {
         this.password = password;
     }
 
-    public int getTelegramId() {
+    public String getTelegramId() {
         return telegramId;
     }
 
-    public void setTelegramId(int telegramId) {
+    public void setTelegramId(String telegramId) {
         this.telegramId = telegramId;
     }
 

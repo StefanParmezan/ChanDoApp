@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String username); // Оставляем только одну версию метода
-    Optional<User> findByTelegramId(int telegramId); // Измените на Optional, если хотите использовать его
+    Optional<User> findByTelegramId(String telegramId); // Измените на Optional, если хотите использовать его
     List<User> findAll();
     void deleteAll(); // Метод для удаления всех пользователей
 }

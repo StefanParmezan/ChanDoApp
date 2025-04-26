@@ -2,10 +2,11 @@ package com.ChanDoTeam.ChanDoApp.models;
 
 import jakarta.persistence.*;
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 @Entity
 public class Habit {
@@ -28,12 +29,21 @@ public class Habit {
     private LocalDateTime lastCompletedDateTime; // Время последнего выполнения
 
     @Column(name = "start_date")
-    private LocalTime startDate; // Дата начала привычки
+    private LocalTime notificationTime; // Дата начала привычки
 
     
     @Column(name = "VisibleDate")
     private LocalDate visibleDate;
 
+    private boolean isNotifiedToday;
+
+    public boolean getNotifiedToday() {
+        return isNotifiedToday;
+    }
+
+    public void setNotifiedToday(boolean notifiedToday) {
+        isNotifiedToday = notifiedToday;
+    }
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -46,6 +56,10 @@ public class Habit {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean isNotifiedToday() {
+        return isNotifiedToday;
     }
 
     public String getTitle() {
@@ -96,12 +110,12 @@ public class Habit {
         this.lastCompletedDateTime = lastCompletedDateTime;
     }
 
-    public LocalTime getStartDate() {
-        return startDate;
+    public LocalTime getNotificationTime() {
+        return notificationTime;
     }
 
-    public void setStartDate(LocalTime startDate) {
-        this.startDate = startDate;
+    public void setNotificationTime(LocalTime startDate) {
+        this.notificationTime = startDate;
     }
 
     public User getUser() {
@@ -118,5 +132,13 @@ public class Habit {
 
     public void setVisibleDate(LocalDate visibleDate) {
         this.visibleDate = visibleDate;
+    }
+    public String getFormattedVisibleDate() {
+        if (visibleDate == null) {
+            return "N/A";
+        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
+                .withLocale(new Locale("ru"));
+        return visibleDate.format(formatter);
     }
 }

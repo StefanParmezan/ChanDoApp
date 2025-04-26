@@ -3,50 +3,54 @@ package com.ChanDoTeam.ChanDoApp.services;
 import com.ChanDoTeam.ChanDoApp.models.Habit;
 import com.ChanDoTeam.ChanDoApp.models.User;
 import com.ChanDoTeam.ChanDoApp.repositories.HabitRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class HabitAddService {
+    private static final Logger logger = LoggerFactory.getLogger(HabitAddService.class);
+
+    private final HabitRepository habitRepository;
+    private final TelegramNotifier telegramNotifier;
 
     @Autowired
-    private HabitRepository habitRepository;
+    public HabitAddService(HabitRepository habitRepository,
+                           TelegramNotifier telegramNotifier) {
+        this.habitRepository = habitRepository;
+        this.telegramNotifier = telegramNotifier;
+    }
 
     public HabitAddResponse addHabit(Habit habit, User user) {
         try {
-            // Валидация данных
             validateHabit(habit);
 
-            // Проверяем, существует ли привычка с таким названием у пользователя
             if (habitRepository.existsByTitleAndUserId(habit.getTitle(), user.getId())) {
-                return new HabitAddResponse(null, "Эта привычка уже существует");
+                return new HabitAddResponse(false, "Эта привычка уже существует");
             }
 
-            // Проверяем лимит привычек для бесплатного аккаунта
             List<Habit> userHabits = habitRepository.findByUserId(user.getId());
             if (userHabits.size() >= 5 && !user.isPremium()) {
-                return new HabitAddResponse(null, "Достигнут лимит привычек для бесплатного аккаунта. Приобретите премиум для добавления дополнительных привычек.");
+                return new HabitAddResponse(false, "Достигнут лимит привычек для бесплатного аккаунта");
             }
 
-            // Устанавливаем значения по умолчанию
-            habit.setStreak(1); // Инициализируем стрик
-            habit.setUser(user); // Привязываем привычку к пользователю
+            habit.setStreak(0);
+            habit.setUser(user);
             habit.setVisibleDate(LocalDate.now());
+            habit.setNotifiedToday(false);
 
-            // Сохраняем привычку в базе данных
-            habitRepository.save(habit);
+            Habit savedHabit = habitRepository.save(habit);
+            telegramNotifier.sendHabitAddedNotification(user.getTelegramId(), savedHabit);
 
-            return new HabitAddResponse("Привычка успешно добавлена!", null);
+            return new HabitAddResponse(true, "Привычка успешно добавлена!");
         } catch (IllegalArgumentException e) {
-            // Возвращаем ошибку валидации
-            return new HabitAddResponse(null, e.getMessage());
+            return new HabitAddResponse(false, e.getMessage());
         } catch (Exception e) {
-            // Возвращаем общую ошибку
-            return new HabitAddResponse(null, "Произошла ошибка при добавлении привычки: " + e.getMessage());
+            logger.error("Error adding habit: {}", e.getMessage(), e);
+            return new HabitAddResponse(false, "Произошла ошибка при добавлении привычки");
         }
     }
 
@@ -55,10 +59,32 @@ public class HabitAddService {
             throw new IllegalArgumentException("Привычка не может быть null");
         }
         if (habit.getTitle() == null || habit.getTitle().trim().isEmpty()) {
-            throw new IllegalArgumentException("Название привычки обязательно для заполнения");
+            throw new IllegalArgumentException("Название привычки обязательно");
         }
         if (habit.getCategory() == null || habit.getCategory().trim().isEmpty()) {
-            throw new IllegalArgumentException("Категория привычки обязательна для заполнения");
+            throw new IllegalArgumentException("Категория привычки обязательна");
+        }
+    }
+
+    public static class HabitAddResponse {
+        private final boolean success;
+        private final String errorMessage;
+
+        public HabitAddResponse(boolean success, String errorMessage) {
+            this.success = success;
+            this.errorMessage = errorMessage;
+        }
+
+        public boolean isSuccess() {
+            return success;
+        }
+
+        public String getErrorMessage() {
+            return errorMessage;
+        }
+
+        public String getMessage() {
+            return success ? "Привычка успешно добавлена!" : errorMessage;
         }
     }
 }

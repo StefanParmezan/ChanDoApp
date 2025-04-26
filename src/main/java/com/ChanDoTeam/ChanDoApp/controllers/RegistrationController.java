@@ -41,7 +41,7 @@ public class RegistrationController {
                                @RequestParam String password,
                                @RequestParam String confirmPassword,
                                @RequestParam int age,
-                               @RequestParam int telegramId,
+                               @RequestParam String telegramId,
                                Model model,
                                RedirectAttributes redirectAttributes) {
 

@@ -59,7 +59,7 @@ public class HabitAddController {
                 .orElse(null);
 
         // Объединяем день, месяц и год в LocalDate
-        habit.setStartDate(LocalTime.now());
+        habit.setNotificationTime(LocalTime.now());
 
         habit.setVisibleDate(LocalDate.now());
 
@@ -67,7 +67,7 @@ public class HabitAddController {
         habit.setLastCompletedDateTime(LocalDateTime.now());
 
         // Пытаемся добавить привычку через сервис
-        HabitAddResponse response = habitAddService.addHabit(habit, user);
+        HabitAddService.HabitAddResponse response = habitAddService.addHabit(habit, user);
 
         // Если есть ошибка, добавляем сообщение в модель
         if (!response.isSuccess()) {

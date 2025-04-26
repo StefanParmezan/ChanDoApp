@@ -26,7 +26,7 @@
 
   <div class="container">
     <#list habits as habit>
-      <div class="card" data-start-date="${habit.startDate!'N/A'}" data-last-completed="${habit.lastCompleted!'0'}">
+      <div class="card" data-start-date="${habit.notificationTime!'N/A'}" data-last-completed="${habit.lastCompleted!'0'}">
         <div class="progress-circle" style="background-color: ${habit.color!'white'};">
           <img class = "brain-icon" src="/imgs/${habit.color}.png" alt="Habit Icon">
         </div>
@@ -35,7 +35,7 @@
           <div class="stats">
             <div>
               <span class="ppoo">Старт</span>
-              <span style="color: #00aaff">${habit.visibleDate!"N/A"}</span>
+              <span style="color: #00aaff">${habit.getFormattedVisibleDate()!"N/A"}</span>
             </div>
             <div>
               <span class="pop">Стрик</span>
